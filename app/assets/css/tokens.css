@@ -1,0 +1,95 @@
+@theme {
+	--font-body: "Segoe UI", system-ui, -apple-system, sans-serif;
+	--font-editorial: Georgia, "Times New Roman", serif;
+
+	--color-page: #fafaf9;
+	--color-surface: #ffffff;
+	--color-surface-raised: #ffffff;
+	--color-surface-muted: #f5f5f4;
+
+	--color-text-primary: #1c1917;
+	--color-text-secondary: #44403c;
+	--color-text-muted: #78716c;
+
+	--color-border: #e7e5e4;
+	--color-border-strong: #d6d3d1;
+
+	--color-brand: #1e4d3a;
+	--color-brand-hover: #163a2c;
+
+	--color-success: #166534;
+	--color-warning: #a16207;
+	--color-danger: #b91c1c;
+	--color-information: #1d4ed8;
+
+	--color-focus-ring: #2563eb;
+
+	--radius-sm: 0.25rem;
+	--radius-md: 0.5rem;
+	--radius-lg: 0.75rem;
+	--radius-pill: 9999px;
+
+	--shadow-subtle: 0 1px 2px rgb(28 25 23 / 0.04);
+	--shadow-card: 0 1px 3px rgb(28 25 23 / 0.06), 0 1px 2px rgb(28 25 23 / 0.04);
+	--shadow-raised: 0 4px 12px rgb(28 25 23 / 0.08);
+
+	--width-site-max: 72rem;
+	--width-article: 42rem;
+	--width-narrow: 32rem;
+	--spacing-gutter: 1.25rem;
+	--height-header: 4rem;
+
+	--leading-body: 1.65;
+	--text-meta: 0.875rem;
+
+	--transition-fast: 120ms ease;
+	--transition-standard: 200ms ease;
+}
+
+:root {
+	--font-body: var(--font-body);
+	--font-editorial: var(--font-editorial);
+
+	--color-page: var(--color-page);
+	--color-surface: var(--color-surface);
+	--color-surface-raised: var(--color-surface-raised);
+	--color-surface-muted: var(--color-surface-muted);
+
+	--color-text-primary: var(--color-text-primary);
+	--color-text-secondary: var(--color-text-secondary);
+	--color-text-muted: var(--color-text-muted);
+
+	--color-border: var(--color-border);
+	--color-border-strong: var(--color-border-strong);
+
+	--color-brand: var(--color-brand);
+	--color-brand-hover: var(--color-brand-hover);
+
+	--color-success: var(--color-success);
+	--color-warning: var(--color-warning);
+	--color-danger: var(--color-danger);
+	--color-information: var(--color-information);
+
+	--color-focus-ring: var(--color-focus-ring);
+
+	--radius-sm: var(--radius-sm);
+	--radius-md: var(--radius-md);
+	--radius-lg: var(--radius-lg);
+	--radius-pill: var(--radius-pill);
+
+	--shadow-subtle: var(--shadow-subtle);
+	--shadow-card: var(--shadow-card);
+	--shadow-raised: var(--shadow-raised);
+
+	--width-site-max: var(--width-site-max);
+	--width-article: var(--width-article);
+	--width-narrow: var(--width-narrow);
+	--spacing-gutter: var(--spacing-gutter);
+	--height-header: var(--height-header);
+
+	--leading-body: var(--leading-body);
+	--text-meta: var(--text-meta);
+
+	--transition-fast: var(--transition-fast);
+	--transition-standard: var(--transition-standard);
+}

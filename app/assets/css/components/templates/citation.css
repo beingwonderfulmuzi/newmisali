@@ -1,0 +1,5 @@
+
+.citation { font-size: var(--text-meta); color: var(--color-text-secondary); }
+.citation__link { color: var(--color-brand); text-decoration: none; }
+.citation__link:hover { text-decoration: underline; }
+.citation__external { font-size: 0.75em; margin-left: 0.125rem; }

@@ -1,8 +1,8 @@
 export default defineAppConfig({
 	site: {
-		name: `Nuxt Starter Template`,
-		description: `Nuxt 4 starter template with TypeScript, TailwindCSS, Vite, ESLint`,
-		url: `https://github.com/MaximeBignolet/nuxt-starter-template`,
-		ogImage: `/og.svg`,
+		name: `Editorial Base`,
+		shortName: `Editorial`,
+		description: `A minimalist, token-driven editorial system base for question-led content.`,
+		defaultLocale: `en`,
 	},
 });

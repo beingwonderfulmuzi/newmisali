@@ -1,0 +1,14 @@
+
+.decision-tree { margin-block: 1.5rem; padding: 1.25rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
+.decision-tree__title { margin: 0 0 1rem; font-family: var(--font-editorial); font-size: 1.125rem; }
+.decision-tree__list { margin: 0; padding-left: 1.25rem; }
+.decision-tree__item { margin-bottom: 0.5rem; color: var(--color-text-secondary); }
+.decision-tree__item--active { color: var(--color-brand); font-weight: 600; }
+.decision-tree__desc { margin: 0.25rem 0 0; font-size: var(--text-meta); color: var(--color-text-muted); }
+.decision-tree__recommendation {
+	margin-top: 1rem;
+	padding: 0.75rem 1rem;
+	border-radius: var(--radius-md);
+	background: var(--color-surface-muted);
+	font-size: var(--text-meta);
+}

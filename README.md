@@ -101,23 +101,54 @@ nuxt-starter-template/
 ## 📁 Project Structure
 
 ```
-nuxt-starter-template/
+tinymaster/
 ├─ app/
-│  ├─ app.vue                      # App shell
-│  ├─ app.config.ts                # App-level config (SEO/site metadata)
-│  ├─ assets/
-│  │  └─ css/main.css              # Tailwind entrypoint
-│  ├─ composables/
-│  │  ├─ api-client/               # API client helpers
-│  │  └─ env/                      # Runtime config accessor
-│  ├─ layouts/default.vue          # Default layout
-│  └─ pages/index.vue              # Home page
-├─ public/              # Static assets
-├─ server/              # Server-side code
-├─ .env.example         # Environment variables template
-├─ nuxt.config.ts       # Nuxt configuration
-└─ tsconfig.json        # TypeScript configuration
+│  ├─ app.vue                      # App shell (layout + page)
+│  ├─ app.config.ts                # Site name, description, locale
+│  ├─ assets/css/
+│  │  ├─ tokens.css                # Design tokens (--color-*, --radius-*, etc.)
+│  │  ├─ base.css                  # Global resets and typography
+│  │  ├─ components.css            # Imports all component CSS (primitives → blocks → templates)
+│  │  └─ components/               # One CSS file per component (no <style> in .vue files)
+│  ├─ components/
+│  │  ├─ primitives/               # Button, Input, Disclosure, etc.
+│  │  └─ blocks/                   # SiteHeader, Prose, ContentCard, etc.
+│  ├─ features/
+│  │  ├─ route-groups.ts           # Ten search-led route groups (can, is, does, …)
+│  │  ├─ templates/
+│  │  │  ├─ components/            # Hero, QuestionPage, Definition, FAQs, etc.
+│  │  │  ├─ template.types.ts      # Shared article and section types
+│  │  │  └─ template.seo.ts        # JSON-LD helpers
+│  │  └─ {routeGroup}/             # Per-group config stubs
+│  ├─ layouts/default.vue          # SkipLink, SiteHeader, main#main-content, SiteFooter
+│  ├─ pages/
+│  │  ├─ index.vue                 # Home (Hero + listing blocks)
+│  │  └─ [routeGroup]/[slug].vue   # Question article shell
+│  └─ error.vue                    # ErrorState wrapper
+├─ public/
+├─ nuxt.config.ts
+└─ tsconfig.json
 ```
+
+---
+
+## 🏗️ Editorial Architecture
+
+This project is a **presentation-first editorial base** for question-led content. It separates three layers:
+
+| Layer | Location | Role |
+|-------|----------|------|
+| **Primitives** | `app/components/primitives/` | Accessible UI building blocks (Button, Disclosure, Input, …) |
+| **Blocks** | `app/components/blocks/` | Composed UI for listings, navigation, and page chrome (SiteHeader, Prose, PopularQuestions, …) |
+| **Templates** | `app/features/templates/components/` | Editorial sections and article shells (Hero, Definition, QuestionPage, TableOfContents, …) |
+
+**Styling:** Vue components have no `<style>` blocks. Each component has a matching CSS file under `app/assets/css/components/{primitives|blocks|templates}/`, imported once via `components.css` in order: primitives → blocks → templates. Use semantic tokens from `tokens.css`.
+
+**Routing:** Articles live at `/{routeGroup}/{slug}` (e.g. `/what/is-an-editorial-system`). Route groups map to common search question prefixes (`can`, `is`, `does`, `why`, `what`, `when`, `where`, `how`, `will`).
+
+**Question pages:** `QuestionPage` provides slots for header, summary, table of contents (sidebar on desktop), main content, supporting sections, and related questions. `TableOfContents` is the only scroll-spy on the page (IntersectionObserver, hash updates, reduced-motion aware).
+
+**Content:** This base does not include a CMS. Projects supply their own data layer and wire it into templates. See `template.example.ts` for a fully typed example article.
 
 ---
 
@@ -185,6 +216,69 @@ Add your custom tokens/utilities directly in `main.css`:
 ### ESLint
 
 Adjust linting rules in `eslint.config.mjs` to match your preferences.
+
+---
+
+## Editorial system architecture
+
+This repository is a **minimal editorial base** for question-led content. Each project forks it and owns its code independently — not a monorepo, layer, or npm package.
+
+### Component locations
+
+| Layer | Path | Role |
+|-------|------|------|
+| Primitives | `app/components/primitives/` | Buttons, inputs, cards, disclosure — foundational UI building blocks |
+| Blocks | `app/components/blocks/` | Site chrome, discovery patterns, prose, tables — presentational sections fed by props |
+| Templates | `app/features/templates/components/` | Article shell, editorial sections, trust components — question-page composition |
+
+Components auto-import from `~/features/*/components/**/*.vue` (first) and `~/components/**` (second) with `pathPrefix: false`, so `<Button />` and `<Hero />` work without manual imports.
+
+### Token customization
+
+Visual tokens live in `app/assets/css/tokens.css` — colors, typography, radii, shadows, layout widths, motion. Override `:root` or `@theme` values there. Do not put visual tokens in `app.config.ts`.
+
+CSS entry chain: `main.css` → `tokens.css` → `base.css` → `components.css`.
+
+### Adding a new component
+
+1. Create `ComponentName.vue` under the appropriate folder (`primitives`, `blocks`, or `features/templates/components`).
+2. Add matching CSS at `app/assets/css/components/{primitives|blocks|templates}/component-name.css` using semantic tokens and a stable kebab-case root class.
+3. Import the CSS once in `app/assets/css/components.css` (primitives → blocks → templates order).
+4. Do **not** add `<style>` blocks inside Vue files or create component barrel files.
+
+### Feature TypeScript barrels
+
+Feature logic uses explicit imports from `~/features`:
+
+```ts
+import { isRouteGroup, type RouteGroup } from '~/features';
+```
+
+Barrel files: `app/features/index.ts`, each route-group `index.ts`, and `app/features/templates/index.ts`. Vue components are **not** exported from barrels.
+
+### Route groups
+
+Ten allowed question prefixes, each with a config in `app/features/{group}/`:
+
+`can` · `is` · `does` · `did` · `why` · `what` · `when` · `where` · `how` · `will`
+
+Routes: `/{routeGroup}/{slug}` via a single dynamic page at `app/pages/[routeGroup]/[slug].vue`. Validate with `isRouteGroup()`; invalid groups return 404.
+
+### Minimal page strategy
+
+Only two pages: `index.vue` (starter homepage) and `[routeGroup]/[slug].vue` (question articles). Add more pages only when a project’s real requirements justify them.
+
+### Replacing the starter example
+
+Example article data lives in `app/features/templates/template.example.ts`. The working demo is `/what/is-an-editorial-system`. Replace `getExampleArticle()` with your content source; other valid routes return 404 until content is added.
+
+### Single scroll-spy rule
+
+`TableOfContents` is the **only** scroll-spy in the system. Do not add `ArticleToc`, `MobileToc`, or `DesktopToc`. One instance adapts responsively (sticky sidebar on desktop, collapsible on mobile).
+
+### Project-specific decisions
+
+Each fork owns: content sources, CMS choice, domain types, section selection per article, disclaimers, evidence claims, and topic taxonomy emerging from real SERP analysis.
 
 ---
 

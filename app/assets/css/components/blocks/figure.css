@@ -1,0 +1,9 @@
+
+.figure { margin-block: 1.5rem; }
+.figure__media { margin: 0; border-radius: var(--radius-md); overflow: hidden; }
+.figure__caption {
+	margin-top: 0.5rem;
+	color: var(--color-text-muted);
+	font-size: var(--text-meta);
+	text-align: center;
+}

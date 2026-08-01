@@ -1,0 +1,35 @@
+
+.prose {
+	max-width: var(--width-article);
+	color: var(--color-text-secondary);
+	line-height: var(--leading-body);
+}
+.prose > :first-child { margin-top: 0; }
+.prose > :last-child { margin-bottom: 0; }
+.prose h2, .prose h3, .prose h4 { margin-top: 2em; margin-bottom: 0.75em; color: var(--color-text-primary); }
+.prose p { margin-bottom: 1.25em; }
+.prose ul, .prose ol { margin: 0 0 1.25em; padding-left: 1.5em; }
+.prose li { margin-bottom: 0.375em; }
+.prose blockquote {
+	margin: 1.5em 0;
+	padding: 0.75em 1em;
+	border-left: 3px solid var(--color-brand);
+	background: var(--color-surface-muted);
+	color: var(--color-text-primary);
+}
+.prose a { color: var(--color-brand); }
+.prose code {
+	padding: 0.125em 0.375em;
+	border-radius: var(--radius-sm);
+	background: var(--color-surface-muted);
+	font-size: 0.9em;
+}
+.prose pre {
+	overflow-x: auto;
+	padding: 1rem;
+	border-radius: var(--radius-md);
+	background: var(--color-surface-muted);
+}
+.prose table { width: 100%; border-collapse: collapse; margin-bottom: 1.25em; }
+.prose th, .prose td { padding: 0.5rem 0.75rem; border: 1px solid var(--color-border); text-align: left; }
+.prose th { background: var(--color-surface-muted); font-weight: 600; }

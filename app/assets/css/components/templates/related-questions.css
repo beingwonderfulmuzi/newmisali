@@ -1,0 +1,15 @@
+
+.related-questions { margin-block: 2rem; }
+.related-questions__title { margin: 0 0 1rem; font-family: var(--font-editorial); }
+.related-questions__list { display: flex; flex-direction: column; gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
+.related-questions__link {
+	display: block;
+	padding: 0.875rem 1rem;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	text-decoration: none;
+	transition: border-color var(--transition-fast);
+}
+.related-questions__link:hover { border-color: var(--color-brand); }
+.related-questions__item-title { margin: 0; font-weight: 600; color: var(--color-text-primary); }
+.related-questions__item-desc { margin: 0.25rem 0 0; font-size: var(--text-meta); color: var(--color-text-muted); }

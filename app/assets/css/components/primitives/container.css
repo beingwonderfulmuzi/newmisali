@@ -1,0 +1,9 @@
+
+.container {
+	width: 100%;
+	max-width: var(--width-site-max);
+	margin-inline: auto;
+	padding-inline: var(--spacing-gutter);
+}
+.container--narrow { max-width: var(--width-narrow); }
+.container--article { max-width: var(--width-article); }

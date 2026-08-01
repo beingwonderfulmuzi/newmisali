@@ -1,0 +1,17 @@
+
+.search-box { position: relative; }
+.search-box__input {
+	width: 100%;
+	padding: 0.625rem 0.75rem 0.625rem 2.25rem;
+	border: 1px solid var(--color-border-strong);
+	border-radius: var(--radius-md);
+	background: var(--color-surface);
+}
+.search-box__icon {
+	position: absolute;
+	top: 50%;
+	left: 0.75rem;
+	transform: translateY(-50%);
+	color: var(--color-text-muted);
+	pointer-events: none;
+}

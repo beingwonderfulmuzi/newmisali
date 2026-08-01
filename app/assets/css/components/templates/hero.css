@@ -1,0 +1,13 @@
+
+.hero { padding-block: 3rem 2rem; }
+.hero__eyebrow {
+	margin: 0 0 0.5rem;
+	color: var(--color-text-muted);
+	font-size: var(--text-meta);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+.hero__title { margin: 0 0 0.75rem; max-width: var(--width-article); }
+.hero__desc { margin: 0 0 1.5rem; max-width: var(--width-article); color: var(--color-text-secondary); }
+.hero__media { margin-top: 1.5rem; border-radius: var(--radius-lg); overflow: hidden; }
+.hero__meta { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; margin-top: 1rem; font-size: var(--text-meta); color: var(--color-text-muted); }

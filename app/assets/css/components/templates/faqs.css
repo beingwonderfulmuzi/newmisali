@@ -1,0 +1,4 @@
+
+.faqs { margin-block: 2.5rem; }
+.faqs__title { margin: 0 0 1rem; font-family: var(--font-editorial); }
+.faqs__list { display: flex; flex-direction: column; gap: 0.75rem; }

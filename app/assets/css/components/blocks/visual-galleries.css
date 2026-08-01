@@ -1,0 +1,9 @@
+
+.visual-galleries { margin-block: 2rem; }
+.visual-galleries__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+	gap: 0.75rem;
+}
+.visual-galleries__item { margin: 0; border-radius: var(--radius-md); overflow: hidden; background: var(--color-surface-muted); }
+.visual-galleries__caption { padding: 0.5rem; font-size: var(--text-meta); color: var(--color-text-muted); }

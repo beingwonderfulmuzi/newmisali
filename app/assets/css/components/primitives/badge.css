@@ -1,0 +1,17 @@
+
+.badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	padding: 0.125rem 0.5rem;
+	border-radius: var(--radius-pill);
+	background: var(--color-surface-muted);
+	color: var(--color-text-secondary);
+	font-size: var(--text-meta);
+	font-weight: 500;
+	line-height: 1.4;
+}
+.badge--success { background: rgb(22 101 52 / 0.1); color: var(--color-success); }
+.badge--warning { background: rgb(161 98 7 / 0.1); color: var(--color-warning); }
+.badge--danger { background: rgb(185 28 28 / 0.1); color: var(--color-danger); }
+.badge--info { background: rgb(29 78 216 / 0.1); color: var(--color-information); }

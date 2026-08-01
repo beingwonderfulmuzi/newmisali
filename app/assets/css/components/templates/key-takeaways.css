@@ -1,0 +1,13 @@
+
+.key-takeaways {
+	margin-block: 2.5rem;
+	padding-block: 0.25rem;
+}
+.key-takeaways__title {
+	margin: 0 0 1rem;
+	font-family: var(--font-editorial);
+}
+.key-takeaways__content {
+	color: var(--color-text-secondary);
+}
+.key-takeaways__content > :last-child { margin-bottom: 0; }

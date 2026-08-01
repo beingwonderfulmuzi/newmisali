@@ -6,6 +6,7 @@ export default withNuxt(
 			'@typescript-eslint/no-explicit-any': `off`,
 			'@typescript-eslint/no-extraneous-class': `off`,
 			'quotes': [`error`, `backtick`, { allowTemplateLiterals: true }],
+			'vue/multi-word-component-names': `off`,
 		},
 	},
 );

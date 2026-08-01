@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import type { CollectionsItem } from '~/components/blocks/Collections.vue';
+import type { PopularQuestionsItem } from '~/components/blocks/PopularQuestions.vue';
+import type { ReadingPathsItem } from '~/components/blocks/ReadingPaths.vue';
+import type { RecentlyUpdatedItem } from '~/components/blocks/RecentlyUpdated.vue';
+
 const { site } = useAppConfig();
 
 useSeoMeta({
@@ -6,43 +11,110 @@ useSeoMeta({
 	description: site.description,
 	ogTitle: site.name,
 	ogDescription: site.description,
-	ogImage: site.ogImage,
-	twitterCard: `summary_large_image`,
 });
+
+const popularQuestions: PopularQuestionsItem[] = [
+	{
+		id: `q1`,
+		title: `What is an editorial system?`,
+		description: `How question-led content, reusable templates, and route groups fit together.`,
+		to: `/what/is-an-editorial-system`,
+		meta: `What`,
+	},
+	{
+		id: `q2`,
+		title: `How to structure question pages`,
+		description: `A practical shell for search-led articles with TOC and supporting sections.`,
+		to: `/how/to-structure-question-pages`,
+		meta: `How`,
+	},
+	{
+		id: `q3`,
+		title: `Why use route groups for content`,
+		description: `Organizing articles around real search intent instead of arbitrary categories.`,
+		to: `/why/use-route-groups-for-content`,
+		meta: `Why`,
+	},
+];
+
+const collections: CollectionsItem[] = [
+	{
+		id: `c1`,
+		title: `Getting started`,
+		description: `Core concepts for building on this editorial base.`,
+		to: `/what/is-an-editorial-system`,
+		meta: `4 articles`,
+	},
+	{
+		id: `c2`,
+		title: `Page structure`,
+		description: `Templates, blocks, and the question page shell.`,
+		to: `/how/to-structure-question-pages`,
+		meta: `3 articles`,
+	},
+];
+
+const readingPaths: ReadingPathsItem[] = [
+	{
+		id: `p1`,
+		title: `Build your first question page`,
+		description: `Start with the example article, then adapt templates for your topic.`,
+		to: `/what/is-an-editorial-system`,
+	},
+	{
+		id: `p2`,
+		title: `Understand route groups`,
+		description: `Map content to can, is, does, why, what, and other search-led prefixes.`,
+		to: `/why/use-route-groups-for-content`,
+	},
+];
+
+const recentlyUpdated: RecentlyUpdatedItem[] = [
+	{
+		id: `r1`,
+		title: `What is an editorial system?`,
+		description: `Updated with TOC scroll-spy and supporting sections.`,
+		to: `/what/is-an-editorial-system`,
+		meta: `Jul 2026`,
+	},
+];
 </script>
 
 <template>
-	<section class="relative isolate overflow-hidden bg-linear-to-b from-emerald-50 via-white to-cyan-50">
-		<div class="pointer-events-none absolute -left-24 top-10 h-64 w-64 rounded-full bg-emerald-300/30 blur-3xl" />
-		<div class="pointer-events-none absolute -right-24 bottom-10 h-64 w-64 rounded-full bg-cyan-300/30 blur-3xl" />
-		<main class="relative mx-auto flex min-h-screen w-full max-w-3xl flex-col items-start justify-center gap-6 px-6 py-16">
-			<p class="rounded-full border border-emerald-200 bg-white/70 px-3 py-1 text-sm font-semibold text-emerald-700 shadow-sm backdrop-blur">
-				Nuxt Starter Template
-			</p>
-			<h1 class="text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
-				Clean, modular, and ready to build on.
-			</h1>
-			<p class="max-w-2xl text-base leading-relaxed text-neutral-700">
-				This project provides a lightweight Nuxt 4 foundation with TypeScript, TailwindCSS, and ESLint so you can ship quickly without business-specific constraints.
-			</p>
-			<div class="flex flex-wrap gap-3">
-				<NuxtLink
-					to="https://nuxt.com/docs"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="rounded-md bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-emerald-700"
-				>
-					Documentation Nuxt
-				</NuxtLink>
-				<NuxtLink
-					to="https://tailwindcss.com/docs"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="rounded-md border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-800 transition hover:border-cyan-300 hover:bg-cyan-100"
-				>
-					Documentation Tailwind
-				</NuxtLink>
-			</div>
-		</main>
-	</section>
+	<Container>
+		<Hero
+			:title="site.name"
+			:description="site.description"
+			eyebrow="Editorial base"
+		>
+			<template #meta>
+				<span>Question-led content</span>
+				<span>Token-driven CSS</span>
+				<span>Accessible components</span>
+			</template>
+		</Hero>
+
+		<PopularQuestions
+			title="Popular questions"
+			description="Starter examples aligned with common search intent."
+			:items="popularQuestions"
+		/>
+
+		<Collections
+			title="Collections"
+			description="Curated groups to explore related topics."
+			:items="collections"
+		/>
+
+		<ReadingPaths
+			title="Reading paths"
+			description="Suggested sequences for new contributors."
+			:items="readingPaths"
+		/>
+
+		<RecentlyUpdated
+			title="Recently updated"
+			:items="recentlyUpdated"
+		/>
+	</Container>
 </template>

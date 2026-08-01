@@ -1,0 +1,10 @@
+
+.knowledge-graph { margin-block: 1.5rem; padding: 1.25rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
+.knowledge-graph__title { margin: 0 0 1rem; font-family: var(--font-editorial); font-size: 1.125rem; }
+.knowledge-graph__visual { margin-bottom: 1rem; padding: 1rem; border-radius: var(--radius-md); background: var(--color-surface-muted); min-height: 4rem; }
+.knowledge-graph__nodes { margin: 0 0 1rem; padding: 0; list-style: none; }
+.knowledge-graph__node { margin-bottom: 0.5rem; font-size: var(--text-meta); }
+.knowledge-graph__node-label { font-weight: 600; color: var(--color-text-primary); }
+.knowledge-graph__node-desc { color: var(--color-text-muted); }
+.knowledge-graph__edges { margin: 0; padding: 0; list-style: none; font-size: var(--text-meta); color: var(--color-text-secondary); }
+.knowledge-graph__edge { margin-bottom: 0.25rem; }

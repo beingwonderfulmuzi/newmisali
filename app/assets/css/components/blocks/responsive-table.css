@@ -1,0 +1,17 @@
+
+.responsive-table { overflow-x: auto; margin-block: 1.5rem; }
+.responsive-table__table { width: 100%; border-collapse: collapse; font-size: var(--text-meta); }
+.responsive-table__table th,
+.responsive-table__table td {
+	padding: 0.625rem 0.75rem;
+	border: 1px solid var(--color-border);
+	text-align: left;
+	vertical-align: top;
+}
+.responsive-table__table th { background: var(--color-surface-muted); font-weight: 600; color: var(--color-text-primary); }
+.responsive-table__table caption {
+	margin-bottom: 0.5rem;
+	text-align: left;
+	font-weight: 600;
+	color: var(--color-text-primary);
+}

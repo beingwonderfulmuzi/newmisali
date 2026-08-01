@@ -1,0 +1,3 @@
+
+.decision-trees { margin-block: 2rem; }
+.decision-trees__list { display: flex; flex-direction: column; gap: 1.5rem; margin: 0; padding: 0; list-style: none; }

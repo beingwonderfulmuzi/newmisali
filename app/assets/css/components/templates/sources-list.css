@@ -1,0 +1,9 @@
+
+.sources-list { margin-block: 2rem; }
+.sources-list__title { margin: 0 0 1rem; font-family: var(--font-editorial); }
+.sources-list__items { margin: 0; padding-left: 1.25rem; }
+.sources-list__item { margin-bottom: 0.75rem; font-size: var(--text-meta); color: var(--color-text-secondary); }
+.sources-list__link { color: var(--color-brand); text-decoration: none; }
+.sources-list__link:hover { text-decoration: underline; }
+.sources-list__meta { color: var(--color-text-muted); }
+.sources-list__external { font-size: 0.75em; margin-left: 0.125rem; }

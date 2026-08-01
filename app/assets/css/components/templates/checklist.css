@@ -1,0 +1,5 @@
+
+.checklist { margin-block: 2.5rem; }
+.checklist__title { margin: 0 0 1rem; font-family: var(--font-editorial); }
+.checklist__list { display: flex; flex-direction: column; gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
+.checklist__item-desc { margin: 0.25rem 0 0 1.75rem; font-size: var(--text-meta); color: var(--color-text-muted); }

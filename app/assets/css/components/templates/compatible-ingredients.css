@@ -1,0 +1,13 @@
+
+.compatible-ingredients {
+	margin-block: 2.5rem;
+	padding-block: 0.25rem;
+}
+.compatible-ingredients__title {
+	margin: 0 0 1rem;
+	font-family: var(--font-editorial);
+}
+.compatible-ingredients__content {
+	color: var(--color-text-secondary);
+}
+.compatible-ingredients__content > :last-child { margin-bottom: 0; }

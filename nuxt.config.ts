@@ -6,6 +6,11 @@ export default defineNuxtConfig({
 	ssr: true,
 	components: [
 		{
+			path: `~/features`,
+			pattern: `*/components/**/*.vue`,
+			pathPrefix: false,
+		},
+		{
 			path: `~/components`,
 			pathPrefix: false,
 		},

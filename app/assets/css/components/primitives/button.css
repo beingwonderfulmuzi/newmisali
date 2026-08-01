@@ -1,0 +1,85 @@
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.625rem 1rem;
+	border: 1px solid transparent;
+	border-radius: var(--radius-md);
+	background: var(--color-brand);
+	color: #fff;
+	font-size: 0.9375rem;
+	font-weight: 500;
+	line-height: 1.2;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+.btn:hover:not(:disabled) {
+	background: var(--color-brand-hover);
+}
+.btn:disabled,
+.btn[aria-disabled="true"] {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+.btn--secondary {
+	background: var(--color-surface);
+	color: var(--color-text-primary);
+	border-color: var(--color-border-strong);
+}
+.btn--secondary:hover:not(:disabled) {
+	background: var(--color-surface-muted);
+}
+.btn--tonal {
+	background: rgb(30 77 58 / 0.1);
+	color: var(--color-brand);
+	border-color: transparent;
+}
+.btn--tonal:hover:not(:disabled) {
+	background: rgb(30 77 58 / 0.16);
+}
+.btn--outlined {
+	background: var(--color-surface);
+	color: var(--color-brand);
+	border-color: rgb(30 77 58 / 0.35);
+}
+.btn--outlined:hover:not(:disabled) {
+	background: rgb(30 77 58 / 0.06);
+	border-color: var(--color-brand);
+}
+.btn--ghost {
+	background: transparent;
+	color: var(--color-brand);
+	border-color: transparent;
+}
+.btn--ghost:hover:not(:disabled) {
+	background: var(--color-surface-muted);
+}
+.btn--text {
+	padding-inline: 0.25rem;
+	background: transparent;
+	color: var(--color-brand);
+	border-color: transparent;
+}
+.btn--text:hover:not(:disabled) {
+	background: transparent;
+	color: var(--color-brand-hover);
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+.btn--sm { padding: 0.375rem 0.75rem; font-size: 0.875rem; }
+.btn--lg { padding: 0.75rem 1.25rem; font-size: 1rem; }
+.btn__spinner {
+	width: 1em;
+	height: 1em;
+	border: 2px solid currentColor;
+	border-right-color: transparent;
+	border-radius: 50%;
+	animation: btn-spin 0.6s linear infinite;
+}
+@keyframes btn-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+	.btn__spinner { animation: none; border-right-color: currentColor; opacity: 0.5; }
+}

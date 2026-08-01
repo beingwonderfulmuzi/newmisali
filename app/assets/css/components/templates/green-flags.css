@@ -1,0 +1,13 @@
+
+.green-flags {
+	margin-block: 2.5rem;
+	padding-block: 0.25rem;
+}
+.green-flags__title {
+	margin: 0 0 1rem;
+	font-family: var(--font-editorial);
+}
+.green-flags__content {
+	color: var(--color-text-secondary);
+}
+.green-flags__content > :last-child { margin-bottom: 0; }

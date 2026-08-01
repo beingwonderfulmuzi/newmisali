@@ -1,0 +1,11 @@
+
+.article-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1.25rem;
+	margin-block: 1rem;
+	font-size: var(--text-meta);
+	color: var(--color-text-muted);
+}
+.article-meta__item { display: inline-flex; align-items: center; gap: 0.25rem; }
+.article-meta__label { font-weight: 500; color: var(--color-text-secondary); }

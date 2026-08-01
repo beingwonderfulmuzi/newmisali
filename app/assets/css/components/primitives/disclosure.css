@@ -1,0 +1,18 @@
+
+.disclosure { border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+.disclosure__button {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	padding: 0.875rem 1rem;
+	border: 0;
+	background: transparent;
+	text-align: left;
+	font-weight: 500;
+	cursor: pointer;
+}
+.disclosure__panel { padding: 0 1rem 1rem; color: var(--color-text-secondary); }
+.disclosure__icon { transition: transform var(--transition-fast); }
+.disclosure__button[aria-expanded="true"] .disclosure__icon { transform: rotate(180deg); }
