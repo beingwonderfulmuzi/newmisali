@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const open = defineModel<boolean>(`open`, { default: false });
-defineProps<{ id: string; label: string }>();
-const panelId = computed(() => `${id}-panel`);
+const props = defineProps<{ id: string; label: string }>();
+const panelId = computed(() => `${props.id}-panel`);
 </script>
 
 <template>

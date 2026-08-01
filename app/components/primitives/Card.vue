@@ -1,5 +1,5 @@
 <script setup lang="ts">
-type CardVariant = `default` | `informational` | `featured` | `success` | `warning`;
+import type { CardVariant } from './primitive.types';
 
 withDefaults(defineProps<{
 	raised?: boolean;

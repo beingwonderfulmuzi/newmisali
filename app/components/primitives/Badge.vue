@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import type { BadgeVariant } from './primitive.types';
+
 withDefaults(defineProps<{
-	variant?: `default` | `success` | `warning` | `danger` | `info`;
+	variant?: BadgeVariant;
 }>(), { variant: `default` });
 </script>
 

@@ -1,5 +1,7 @@
 <script setup lang="ts">
-withDefaults(defineProps<{ width?: `site` | `article` | `narrow` }>(), { width: `site` });
+import type { ContainerWidth } from './primitive.types';
+
+withDefaults(defineProps<{ width?: ContainerWidth }>(), { width: `site` });
 </script>
 
 <template>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
-type ButtonVariant = `primary` | `tonal` | `outlined` | `text` | `secondary` | `ghost`;
-type ButtonSize = `sm` | `md` | `lg`;
+import type { ButtonSize, ButtonVariant } from './primitive.types';
 
 const props = withDefaults(defineProps<{
 	type?: `button` | `submit` | `reset`;

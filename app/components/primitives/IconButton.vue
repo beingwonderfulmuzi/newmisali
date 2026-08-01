@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import type { IconButtonVariant } from './primitive.types';
+
 withDefaults(defineProps<{
 	label: string;
 	type?: `button` | `submit` | `reset`;
 	disabled?: boolean;
-	variant?: `default` | `ghost`;
+	variant?: IconButtonVariant;
 }>(), {
 	type: `button`,
 	disabled: false,
