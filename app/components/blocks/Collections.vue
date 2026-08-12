@@ -1,34 +1,16 @@
 <script setup lang="ts">
-export interface CollectionsItem {
-	id: string;
-	title: string;
-	description?: string;
-	to?: string;
-	meta?: string;
-}
-defineProps<{ items: CollectionsItem[]; title?: string; description?: string }>();
+import type { BlockCardItem, BlockCardListProps } from './block.types';
+
+export type CollectionsItem = BlockCardItem;
+defineProps<BlockCardListProps>();
 </script>
 
 <template>
-	<section class="collections">
-		<SectionHeading
-			v-if="title"
-			:title="title"
-			:description="description"
-		/>
-		<ul class="collections__list">
-			<li
-				v-for="item in items"
-				:key="item.id"
-				class="collections__item"
-			>
-				<ContentCard
-					:title="item.title"
-					:description="item.description"
-					:to="item.to"
-					:eyebrow="item.meta"
-				/>
-			</li>
-		</ul>
-	</section>
+	<BaseContentCardList
+		:items="items"
+		:title="title"
+		:description="description"
+		namespace="collections"
+		layout="grid"
+	/>
 </template>

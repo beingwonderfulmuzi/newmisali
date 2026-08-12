@@ -1,4 +1,10 @@
 import type {
+	BadgeVariant,
+	ButtonSize,
+	ButtonVariant,
+	CardVariant,
+} from '~/components/primitives/primitive.types';
+import type {
 	ArticleAuthor,
 	ArticleMetaData,
 	ArticleReviewer,
@@ -16,16 +22,16 @@ import type {
 	TableOfContentsItem,
 	TimelineEvent,
 } from '~/features/templates/template.types';
-import type { BadgeVariant, ButtonSize, ButtonVariant, CardVariant } from '~/components/primitives/primitive.types';
 
-export const buttonVariants: Array<{ label: string; variant: ButtonVariant }> = [
-	{ label: `Primary`, variant: `primary` },
-	{ label: `Tonal`, variant: `tonal` },
-	{ label: `Outlined`, variant: `outlined` },
-	{ label: `Text`, variant: `text` },
-	{ label: `Secondary`, variant: `secondary` },
-	{ label: `Ghost`, variant: `ghost` },
-];
+export const buttonVariants: Array<{ label: string; variant: ButtonVariant }>
+	= [
+		{ label: `Primary`, variant: `primary` },
+		{ label: `Tonal`, variant: `tonal` },
+		{ label: `Outlined`, variant: `outlined` },
+		{ label: `Text`, variant: `text` },
+		{ label: `Secondary`, variant: `secondary` },
+		{ label: `Ghost`, variant: `ghost` },
+	];
 
 export const buttonSizes: Array<{ label: string; size: ButtonSize }> = [
 	{ label: `Small`, size: `sm` },
@@ -41,12 +47,36 @@ export const badgeVariants: Array<{ label: string; variant: BadgeVariant }> = [
 	{ label: `Info`, variant: `info` },
 ];
 
-export const cardVariants: Array<{ label: string; variant: CardVariant; description: string }> = [
-	{ label: `Default`, variant: `default`, description: `Neutral surface for regular grouped content.` },
-	{ label: `Informational`, variant: `informational`, description: `Contextual note treatment for supporting guidance.` },
-	{ label: `Featured`, variant: `featured`, description: `Higher emphasis treatment for recommended content.` },
-	{ label: `Success`, variant: `success`, description: `Positive state for confirmed or completed items.` },
-	{ label: `Warning`, variant: `warning`, description: `Attention state for caveats and important limits.` },
+export const cardVariants: Array<{
+	label: string;
+	variant: CardVariant;
+	description: string;
+}> = [
+	{
+		label: `Default`,
+		variant: `default`,
+		description: `Neutral surface for regular grouped content.`,
+	},
+	{
+		label: `Informational`,
+		variant: `informational`,
+		description: `Contextual note treatment for supporting guidance.`,
+	},
+	{
+		label: `Featured`,
+		variant: `featured`,
+		description: `Higher emphasis treatment for recommended content.`,
+	},
+	{
+		label: `Success`,
+		variant: `success`,
+		description: `Positive state for confirmed or completed items.`,
+	},
+	{
+		label: `Warning`,
+		variant: `warning`,
+		description: `Attention state for caveats and important limits.`,
+	},
 ];
 
 export const navItems = [
@@ -118,9 +148,20 @@ export const comparisonRows: ComparisonRow[] = [
 ];
 
 export const checklistItems: ChecklistItem[] = [
-	{ id: `variants`, label: `Variants render from shared options`, checked: true },
-	{ id: `states`, label: `Disabled, loading, selected, and empty states are visible`, checked: true },
-	{ id: `tokens`, label: `Styling uses CSS tokens instead of page-specific colors` },
+	{
+		id: `variants`,
+		label: `Variants render from shared options`,
+		checked: true,
+	},
+	{
+		id: `states`,
+		label: `Disabled, loading, selected, and empty states are visible`,
+		checked: true,
+	},
+	{
+		id: `tokens`,
+		label: `Styling uses CSS tokens instead of page-specific colors`,
+	},
 ];
 
 export const faqs: FAQItem[] = [
@@ -137,19 +178,43 @@ export const faqs: FAQItem[] = [
 ];
 
 export const timelineEvents: TimelineEvent[] = [
-	{ id: `audit`, date: `Step 1`, title: `Audit`, description: `Find every component and its required props.` },
-	{ id: `centralize`, date: `Step 2`, title: `Centralize`, description: `Move shared variant options into typed source modules.` },
-	{ id: `preview`, date: `Step 3`, title: `Preview`, description: `Render the components together in one page.` },
+	{
+		id: `audit`,
+		date: `Step 1`,
+		title: `Audit`,
+		description: `Find every component and its required props.`,
+	},
+	{
+		id: `centralize`,
+		date: `Step 2`,
+		title: `Centralize`,
+		description: `Move shared variant options into typed source modules.`,
+	},
+	{
+		id: `preview`,
+		date: `Step 3`,
+		title: `Preview`,
+		description: `Render the components together in one page.`,
+	},
 ];
 
 export const quickFacts: QuickFact[] = [
-	{ label: `Primitive variants`, value: String(buttonVariants.length + badgeVariants.length + cardVariants.length) },
+	{
+		label: `Primitive variants`,
+		value: String(
+			buttonVariants.length + badgeVariants.length + cardVariants.length,
+		),
+	},
 	{ label: `Block demos`, value: `30` },
 	{ label: `Template demos`, value: `34` },
 ];
 
 export const knowledgeNodes: KnowledgeGraphNode[] = [
-	{ id: `tokens`, label: `Tokens`, description: `Color, spacing, shadow, and radius values` },
+	{
+		id: `tokens`,
+		label: `Tokens`,
+		description: `Color, spacing, shadow, and radius values`,
+	},
 	{ id: `types`, label: `Types`, description: `Shared variant unions` },
 	{ id: `fixtures`, label: `Fixtures`, description: `One demo data source` },
 	{ id: `page`, label: `Showcase`, description: `Rendered examples` },

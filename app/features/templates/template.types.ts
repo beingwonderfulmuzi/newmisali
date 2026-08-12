@@ -136,3 +136,32 @@ export interface ArticleNavigationItem {
 	label: string;
 	to: string;
 }
+
+export type TemplateSectionVariant
+	= | `definition`
+		| `how-it-works`
+		| `causes`
+		| `signs`
+		| `benefits`
+		| `risks`
+		| `side-effects`
+		| `suitable-for`
+		| `avoid-if`
+		| `compatible-ingredients`
+		| `avoid-combining`
+		| `routine-steps`
+		| `ingredient-spotlight`
+		| `product-checklist`
+		| `red-flags`
+		| `green-flags`
+		| `myths-reality`
+		| `common-mistakes`
+		| `practical-tips`
+		| `key-takeaways`
+		| `before-after-concept`;
+
+export interface TemplateSectionProps {
+	id?: string;
+	title?: string;
+	headingLevel?: 2 | 3;
+}

@@ -11,7 +11,7 @@ defineProps<{ events: TimelineEvent[]; title?: string; id?: string }>();
 	>
 		<h2
 			v-if="title"
-			class="definition__title"
+			class="timeline__heading"
 		>
 			{{ title }}
 		</h2>

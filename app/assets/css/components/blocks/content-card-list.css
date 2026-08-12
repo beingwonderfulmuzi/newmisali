@@ -1,0 +1,24 @@
+.content-card-list {
+	margin-block: 2rem;
+}
+
+.content-card-list__list {
+	gap: 1rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.content-card-list--grid .content-card-list__list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+
+.content-card-list--stack .content-card-list__list {
+	display: flex;
+	flex-direction: column;
+}
+
+.content-card-list__item {
+	margin: 0;
+}

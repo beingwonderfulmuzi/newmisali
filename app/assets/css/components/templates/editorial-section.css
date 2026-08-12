@@ -1,0 +1,23 @@
+.editorial-section {
+	margin-block: 2.5rem;
+	padding-block: 0.25rem;
+}
+
+.editorial-section__title {
+	margin: 0 0 1rem;
+	font-family: var(--font-editorial);
+}
+
+.editorial-section__content {
+	color: var(--color-text-secondary);
+}
+
+.editorial-section__content > :last-child {
+	margin-bottom: 0;
+}
+
+.editorial-section--before-after-concept .before-after-concept__disclaimer {
+	margin: 1rem 0 0;
+	color: var(--color-text-muted);
+	font-size: var(--text-meta);
+}

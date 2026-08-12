@@ -1,0 +1,57 @@
+.editorial-profile-box {
+	display: flex;
+	gap: 1rem;
+	padding: 1.25rem;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-lg);
+	background: var(--color-surface);
+}
+
+.editorial-profile-box--reviewer {
+	background: var(--color-surface-muted);
+}
+
+.editorial-profile-box__avatar {
+	flex-shrink: 0;
+	width: 3.5rem;
+	height: 3.5rem;
+	border-radius: 50%;
+	overflow: hidden;
+	background: var(--color-surface-muted);
+}
+
+.editorial-profile-box--reviewer .editorial-profile-box__avatar {
+	background: var(--color-surface);
+}
+
+.editorial-profile-box__name {
+	margin: 0;
+	font-weight: 600;
+	color: var(--color-text-primary);
+}
+
+.editorial-profile-box__role {
+	margin: 0.125rem 0 0;
+	font-size: var(--text-meta);
+	color: var(--color-text-muted);
+}
+
+.editorial-profile-box__bio {
+	margin: 0.5rem 0 0;
+	font-size: var(--text-meta);
+	color: var(--color-text-secondary);
+}
+
+.editorial-profile-box__creds {
+	margin: 0.5rem 0 0;
+	padding: 0;
+	list-style: none;
+	font-size: var(--text-meta);
+	color: var(--color-text-muted);
+}
+
+.editorial-profile-box__link {
+	display: inline-block;
+	margin-top: 0.5rem;
+	font-size: var(--text-meta);
+}

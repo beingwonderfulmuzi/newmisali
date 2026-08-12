@@ -1,5 +1,6 @@
 
 .timeline { margin-block: 2.5rem; }
+.timeline__heading { margin: 0 0 1rem; font-family: var(--font-editorial); }
 .timeline__list { position: relative; margin: 0; padding: 0 0 0 1.5rem; list-style: none; border-left: 2px solid var(--color-border); }
 .timeline__item { position: relative; padding-bottom: 1.5rem; }
 .timeline__item::before {

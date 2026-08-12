@@ -1,28 +1,26 @@
 <script setup lang="ts">
-withDefaults(defineProps<{ id?: string; title?: string; disclaimer?: string }>(), {
-	disclaimer: `Illustrative comparison only — individual results vary and this is not medical or professional advice.`,
+import type { TemplateSectionProps } from '~/features/templates/template.types';
+
+withDefaults(defineProps<TemplateSectionProps & { disclaimer?: string }>(), {
+	disclaimer: `Illustrative comparison only - individual results vary and this is not medical or professional advice.`,
 });
 </script>
 
 <template>
-	<section
+	<EditorialSection
 		:id="id"
-		class="before-after-concept"
+		:title="title"
+		:heading-level="headingLevel"
+		variant="before-after-concept"
 	>
-		<h2
-			v-if="title"
-			class="before-after-concept__title"
-		>
-			{{ title }}
-		</h2>
-		<div class="before-after-concept__content">
-			<slot />
-		</div>
-		<p
-			v-if="disclaimer"
-			class="before-after-concept__disclaimer"
-		>
-			{{ disclaimer }}
-		</p>
-	</section>
+		<slot />
+		<template #after>
+			<p
+				v-if="disclaimer"
+				class="before-after-concept__disclaimer"
+			>
+				{{ disclaimer }}
+			</p>
+		</template>
+	</EditorialSection>
 </template>

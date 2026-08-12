@@ -1,20 +1,16 @@
 <script setup lang="ts">
-defineProps<{ id?: string; title?: string }>();
+import type { TemplateSectionProps } from '~/features/templates/template.types';
+
+defineProps<TemplateSectionProps>();
 </script>
 
 <template>
-	<section
+	<EditorialSection
 		:id="id"
-		class="how-it-works"
+		:title="title"
+		:heading-level="headingLevel"
+		variant="how-it-works"
 	>
-		<h2
-			v-if="title"
-			class="how-it-works__title"
-		>
-			{{ title }}
-		</h2>
-		<div class="how-it-works__content">
-			<slot />
-		</div>
-	</section>
+		<slot />
+	</EditorialSection>
 </template>

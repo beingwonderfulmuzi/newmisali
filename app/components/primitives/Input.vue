@@ -1,14 +1,22 @@
 <script setup lang="ts">
+import type { FieldProps } from './primitive.types';
+
 const model = defineModel<string>({ default: `` });
-defineProps<{ id: string; label: string; type?: string; placeholder?: string; hint?: string; disabled?: boolean; required?: boolean; autocomplete?: string }>();
+defineProps<FieldProps & {
+	type?: string;
+	placeholder?: string;
+	autocomplete?: string;
+}>();
 </script>
 
 <template>
-	<div class="field">
-		<label
-			class="field__label"
-			:for="id"
-		>{{ label }}</label>
+	<Field
+		:id="id"
+		:label="label"
+		:hint="hint"
+		:disabled="disabled"
+		:required="required"
+	>
 		<input
 			:id="id"
 			v-model="model"
@@ -19,11 +27,5 @@ defineProps<{ id: string; label: string; type?: string; placeholder?: string; hi
 			:required="required"
 			:autocomplete="autocomplete"
 		>
-		<p
-			v-if="hint"
-			class="field__hint"
-		>
-			{{ hint }}
-		</p>
-	</div>
+	</Field>
 </template>
