@@ -1,351 +1,290 @@
-# ⚡ Nuxt 4 Starter Template
+# Nuxt 4 Editorial Starter
 
-<p align="center">
-  <strong>Production-ready Nuxt 4 starter with TypeScript, TailwindCSS 4 & ESLint</strong>
-</p>
+A **forkable Nuxt 4 starter** with TypeScript, Tailwind CSS 4, and a presentation-first editorial architecture for question-led content sites.
 
-<p align="center">
-  <a href="https://nuxt-starter-template-seven.vercel.app/">🌐 Live Demo</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-features">Features</a> •
-  <a href="#-tech-stack">Tech Stack</a>
-</p>
-
-<p align="center">
-  <a href="https://nuxt.com"><img src="https://img.shields.io/badge/Nuxt-4-00DC82?logo=nuxt.js&logoColor=white" alt="Nuxt 4"></a>
-  <a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript"></a>
-  <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/Tailwind-4-38B2AC?logo=tailwind-css&logoColor=white" alt="TailwindCSS"></a>
-  <a href="/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
-  <img src="https://img.shields.io/github/stars/MaximeBignolet/nuxt-starter-template?style=social" alt="GitHub stars">
-</p>
+Built on [Maxime Bignolet's nuxt-starter-template](https://github.com/MaximeBignolet/nuxt-starter-template) for its simplicity, then extended into a reusable base for new projects. Each fork owns its code independently — not a monorepo, shared layer, or npm package.
 
 ---
 
-## 🎯 Why This Template?
-
-A clean, modern, and **production-tested** Nuxt 4 starter that saves you hours of initial setup. Built with best practices and the latest versions of your favorite tools.
-
-✅ **Nuxt 4** – Latest stable release with all new features  
-✅ **TypeScript** – Full type safety configured out of the box  
-✅ **TailwindCSS 4** – Bleeding-edge styling with modern features  
-✅ **Zero Config** – ESLint, Vite, and auto-imports ready to go  
-✅ **Clean Architecture** – Organized folder structure for scalability  
-✅ **Battle-Tested** – Used in real production projects
-
----
-
-## 🚀 Quick Start
-
-### [🎯 Use This Template](https://github.com/MaximeBignolet/nuxt-starter-template/generate)
-**Get started in 30 seconds** ← Click to create your own repository
-
-### Or clone manually:
+## Quick start
 
 ```bash
-# Clone the repository
-git clone https://github.com/MaximeBignolet/nuxt-starter-template.git
-cd nuxt-starter-template
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
+pnpm install   # or npm install
+pnpm dev       # http://localhost:3000
 ```
 
-Server runs on `http://localhost:3000` 🚀
+| Command | Description |
+|---------|-------------|
+| `pnpm dev` | Development server with HMR |
+| `pnpm build` | Production build |
+| `pnpm preview` | Preview production build |
+| `pnpm generate` | Static site generation |
+| `pnpm lint` | Run ESLint |
 
-### Build for Production
-
-```bash
-# Build the application
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-> 💡 **Tip:** Use either `npm` or `yarn` consistently to avoid lockfile conflicts.
+**Demo article:** [`/what/is-an-editorial-system`](http://localhost:3000/what/is-an-editorial-system)
 
 ---
 
-## 📦 What's Included
+## Tech stack
 
-```
-nuxt-starter-template/
-├─ 🎨 TailwindCSS 4 with optimized config
-├─ 🔒 TypeScript strict mode enabled
-├─ ⚡ Vite for lightning-fast HMR
-├─ 🧹 ESLint + formatting rules configured
-├─ 📁 Clean folder structure ready to scale
-├─ 🔄 Auto-imports (composables)
-├─ 🛣️ File-based routing configured
-├─ 📝 Example app config and composables
-└─ 🚀 Vercel/Netlify deployment ready
-```
+| Technology | Purpose |
+|------------|---------|
+| [Nuxt 4](https://nuxt.com) | SSR, file-based routing, auto-imports |
+| [Vue 3](https://vuejs.org) | Composition API |
+| [TypeScript](https://www.typescriptlang.org) | Strict type safety |
+| [Tailwind CSS 4](https://tailwindcss.com) | Utility-first styling via Vite plugin |
+| [ESLint](https://eslint.org) | Linting (`@nuxt/eslint`) |
 
 ---
 
-## 🛠️ Tech Stack
-
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| [Nuxt 4](https://nuxt.com) | Latest | Hybrid rendering & SSR |
-| [TypeScript](https://www.typescriptlang.org) | 5.x | Type safety |
-| [TailwindCSS](https://tailwindcss.com) | 4.x | Utility-first styling |
-| [Vite](https://vitejs.dev) | Latest | Fast bundling & HMR |
-| [ESLint](https://eslint.org) | Latest | Code quality & formatting |
-
----
-
-## 📁 Project Structure
+## Project structure
 
 ```
-tinymaster/
-├─ app/
-│  ├─ app.vue                      # App shell (layout + page)
-│  ├─ app.config.ts                # Site name, description, locale
-│  ├─ assets/css/
-│  │  ├─ tokens.css                # Design tokens (--color-*, --radius-*, etc.)
-│  │  ├─ base.css                  # Global resets and typography
-│  │  ├─ components.css            # Imports all component CSS (primitives → blocks → templates)
-│  │  └─ components/               # One CSS file per component (no <style> in .vue files)
-│  ├─ components/
-│  │  ├─ primitives/               # Button, Input, Disclosure, etc.
-│  │  └─ blocks/                   # SiteHeader, Prose, ContentCard, etc.
-│  ├─ features/
-│  │  ├─ route-groups.ts           # Ten search-led route groups (can, is, does, …)
-│  │  ├─ templates/
-│  │  │  ├─ components/            # Hero, QuestionPage, Definition, FAQs, etc.
-│  │  │  ├─ template.types.ts      # Shared article and section types
-│  │  │  └─ template.seo.ts        # JSON-LD helpers
-│  │  └─ {routeGroup}/             # Per-group config stubs
-│  ├─ layouts/default.vue          # SkipLink, SiteHeader, main#main-content, SiteFooter
-│  ├─ pages/
-│  │  ├─ index.vue                 # Home (Hero + listing blocks)
-│  │  └─ [routeGroup]/[slug].vue   # Question article shell
-│  └─ error.vue                    # ErrorState wrapper
-├─ public/
-├─ nuxt.config.ts
-└─ tsconfig.json
+app/
+├── app.vue / app.config.ts        # App shell and site metadata
+├── assets/css/
+│   ├── tokens.css                 # Design tokens (--color-*, --radius-*, etc.)
+│   ├── base.css                   # Global resets and typography
+│   ├── components.css             # Imports all component CSS (layer order matters)
+│   └── components/
+│       ├── primitives/            # One CSS file per primitive
+│       ├── blocks/                # One CSS file per block
+│       └── templates/             # One CSS file per template section
+├── components/
+│   ├── primitives/                # UI atoms (Button, Input, Card, …)
+│   └── blocks/                    # Composed UI (SiteHeader, Prose, …)
+├── features/                      # ← Primary customization zone
+│   ├── route-groups.ts            # Ten question prefixes (can, is, what, …)
+│   ├── {routeGroup}/              # Per-group config stubs
+│   └── templates/
+│       ├── components/            # Editorial sections and QuestionPage shell
+│       ├── template.types.ts      # Article and section TypeScript types
+│       ├── template.seo.ts        # JSON-LD helpers
+│       └── template.example.ts    # Example article data (replace per project)
+├── layouts/default.vue            # SkipLink, SiteHeader, main, SiteFooter
+├── pages/
+│   ├── index.vue                  # Homepage (blocks)
+│   └── [routeGroup]/[slug].vue    # Question articles (templates)
+└── composables/                   # Auto-imported composables
 ```
 
 ---
 
-## 🏗️ Editorial Architecture
+## Editorial architecture
 
-This project is a **presentation-first editorial base** for question-led content. It separates three layers:
+The codebase separates UI into four layers. Know which layer to work in before making changes.
 
-| Layer | Location | Role |
-|-------|----------|------|
-| **Primitives** | `app/components/primitives/` | Accessible UI building blocks (Button, Disclosure, Input, …) |
-| **Blocks** | `app/components/blocks/` | Composed UI for listings, navigation, and page chrome (SiteHeader, Prose, PopularQuestions, …) |
-| **Templates** | `app/features/templates/components/` | Editorial sections and article shells (Hero, Definition, QuestionPage, TableOfContents, …) |
-
-**Styling:** Vue components have no `<style>` blocks. Each component has a matching CSS file under `app/assets/css/components/{primitives|blocks|templates}/`, imported once via `components.css` in order: primitives → blocks → templates. Use semantic tokens from `tokens.css`.
-
-**Routing:** Articles live at `/{routeGroup}/{slug}` (e.g. `/what/is-an-editorial-system`). Route groups map to common search question prefixes (`can`, `is`, `does`, `why`, `what`, `when`, `where`, `how`, `will`).
-
-**Question pages:** `QuestionPage` provides slots for header, summary, table of contents (sidebar on desktop), main content, supporting sections, and related questions. `TableOfContents` is the only scroll-spy on the page (IntersectionObserver, hash updates, reduced-motion aware).
-
-**Content:** This base does not include a CMS. Projects supply their own data layer and wire it into templates. See `template.example.ts` for a fully typed example article.
-
----
-
-## ✨ Features
-
-### Core Features
-- ✅ **Nuxt 4** with latest features and performance improvements
-- ✅ **TypeScript** with strict mode for maximum type safety
-- ✅ **TailwindCSS 4** with JIT compiler and modern utilities
-- ✅ **ESLint** configured for Nuxt, Vue, and TypeScript
-- ✅ **Auto-imports** for components, composables, and utilities
-- ✅ **Path aliases** using `@` for clean imports
-
-### Developer Experience
-- 🔥 **Hot Module Replacement** for instant updates
-- 📝 **Code examples** included to get you started
-- 🎨 **Responsive design** patterns ready to use
-- 🔧 **Extensible** architecture for easy customization
-- 📦 **Production-optimized** build configuration
-
-### Deployment Ready
-- ☁️ **Vercel** deployment configured
-- 🌐 **Netlify** compatible
-- 🐳 **Docker** ready (add Dockerfile if needed)
-- 🚀 **SSR** and **SSG** modes available
-
----
-
-## 🆚 Comparison
-
-| Feature | This Template | Official Nuxt Starter | Other Templates |
-|---------|---------------|----------------------|-----------------|
-| Nuxt 4 | ✅ | ❌ (v3) | ❌ |
-| TailwindCSS 4 | ✅ | ❌ | Partial |
-| TypeScript Strict | ✅ | Partial | ❌ |
-| ESLint Configured | ✅ | ❌ | Partial |
-| Production Examples | ✅ | ❌ | ❌ |
-| Clean Architecture | ✅ | Basic | Varies |
-
----
-
-## 🎨 Customization
-
-### Environment Variables
-
-Copy `.env.example` to `.env` and configure:
-
-```bash
-cp .env.example .env
+```
+┌──────────────────────────────────────────────────────────────┐
+│  app/features/              Primary project customization     │
+│    routing, types, content wiring, SEO                        │
+│    templates/components/    Article sections & page shell     │
+├──────────────────────────────────────────────────────────────┤
+│  app/components/blocks/     Site chrome, listings, patterns   │
+├──────────────────────────────────────────────────────────────┤
+│  app/components/primitives/ Foundational UI atoms             │
+└──────────────────────────────────────────────────────────────┘
 ```
 
-### TailwindCSS
+### Primitives — `app/components/primitives/`
 
-Tailwind is loaded from `app/assets/css/main.css` and configured through Nuxt/Vite in `nuxt.config.ts`.
-Add your custom tokens/utilities directly in `main.css`:
+Accessible, reusable UI atoms. Rarely project-specific.
 
-```css
-@import "tailwindcss";
+| | |
+|---|---|
+| **Examples** | `Button`, `Input`, `Card`, `Container`, `Disclosure`, `Badge`, `Field`, `Select`, `Checkbox`, `Divider`, `Skeleton`, `VisuallyHidden` |
+| **When to touch** | Adding a foundational control or fixing shared accessibility/behavior |
+| **Types** | `primitive.types.ts` |
+| **CSS** | `app/assets/css/components/primitives/{name}.css` |
 
-@theme {
-	--color-primary: #00dc82;
-}
+Compose other primitives only. No business or editorial logic.
+
+### Blocks — `app/components/blocks/`
+
+Composed, presentational UI for site chrome, discovery, listings, and shared page patterns. Fed by **props only** — no content-source coupling.
+
+| Category | Components |
+|----------|------------|
+| Chrome | `SiteHeader`, `SiteFooter`, `SkipLink`, `Breadcrumbs` |
+| Discovery | `PopularQuestions`, `Collections`, `ReadingPaths`, `RecentlyUpdated`, `SearchBox`, `Pagination` |
+| Content | `Prose`, `ContentCard`, `SectionHeading`, `ResponsiveTable`, `Figure` |
+| States | `EmptyState`, `LoadingState`, `ErrorState` |
+
+| | |
+|---|---|
+| **When to touch** | Homepage sections, navigation, card grids, tables, filters — anything reusable across pages that is not tied to a single article |
+| **Types** | `block.types.ts` |
+| **CSS** | `app/assets/css/components/blocks/{name}.css` |
+
+Use primitives internally. Keep blocks data-agnostic — the parent passes items and labels.
+
+### Templates — `app/features/templates/components/`
+
+Editorial sections and the article page shell. Most article UX work happens here.
+
+**Page shell:** `QuestionPage` exposes slots for `header`, `summary`, `tableOfContents`, main content (default), `supporting`, and `related`.
+
+**Section components** (compose per article): `Hero`, `Definition`, `HowItWorks`, `Benefits`, `PracticalTips`, `FAQs`, `SourcesList`, `AuthorBox`, `TableOfContents`, `RelatedQuestions`, `KeyTakeaways`, `RedFlags`, `ScientificEvidence`, and others.
+
+**Base pattern:** Most sections use `EditorialSection` (`id`, `title`, `variant`; optional `headingLevel`). Wrap body copy in `<Prose>`.
+
+| | |
+|---|---|
+| **Types** | `app/features/templates/template.types.ts` |
+| **SEO** | `template.seo.ts` (JSON-LD) |
+| **Example data** | `template.example.ts` — replace with your content layer |
+| **CSS** | `app/assets/css/components/templates/{name}.css` |
+
+**Rule:** `TableOfContents` is the **only scroll-spy** on the site. Do not add duplicate TOC or scroll-spy components.
+
+### Features — `app/features/`
+
+Project-specific logic, routing, types, and wiring — not generic UI. This is where most new-project work lives.
+
+```
+app/features/
+├── index.ts                 # Barrel: route groups and re-exports
+├── route-groups.ts          # can · is · does · did · why · what · when · where · how · will
+├── route-group.types.ts
+├── {routeGroup}/            # Per-group config (e.g. what/what.config.ts)
+└── templates/               # Types, utils, SEO, example data, and template components
 ```
 
-### ESLint
+**Typical customization tasks:**
 
-Adjust linting rules in `eslint.config.mjs` to match your preferences.
+1. **Content layer** — replace `getExampleArticle()` with a CMS, API, or file-based source
+2. **Route group config** — labels, question starters, group-specific behavior
+3. **Article types** — extend `QuestionArticle` and section shapes in `template.types.ts`
+4. **Pages** — compose templates in `[routeGroup]/[slug].vue`; compose blocks on `index.vue`
+5. **Project policy** — section selection per article, disclaimers, evidence rules, taxonomy
 
----
+**Routing:** Articles live at `/{routeGroup}/{slug}`. Validate with `isRouteGroup()`; invalid groups return 404.
 
-## Editorial system architecture
-
-This repository is a **minimal editorial base** for question-led content. Each project forks it and owns its code independently — not a monorepo, layer, or npm package.
-
-### Component locations
-
-| Layer | Path | Role |
-|-------|------|------|
-| Primitives | `app/components/primitives/` | Buttons, inputs, cards, disclosure — foundational UI building blocks |
-| Blocks | `app/components/blocks/` | Site chrome, discovery patterns, prose, tables — presentational sections fed by props |
-| Templates | `app/features/templates/components/` | Article shell, editorial sections, trust components — question-page composition |
-
-Components auto-import from `~/features/*/components/**/*.vue` (first) and `~/components/**` (second) with `pathPrefix: false`, so `<Button />` and `<Hero />` work without manual imports.
-
-### Token customization
-
-Visual tokens live in `app/assets/css/tokens.css` — colors, typography, radii, shadows, layout widths, motion. Override `:root` or `@theme` values there. Do not put visual tokens in `app.config.ts`.
-
-CSS entry chain: `main.css` → `tokens.css` → `base.css` → `components.css`.
-
-### Adding a new component
-
-1. Create `ComponentName.vue` under the appropriate folder (`primitives`, `blocks`, or `features/templates/components`).
-2. Add matching CSS at `app/assets/css/components/{primitives|blocks|templates}/component-name.css` using semantic tokens and a stable kebab-case root class.
-3. Import the CSS once in `app/assets/css/components.css` (primitives → blocks → templates order).
-4. Do **not** add `<style>` blocks inside Vue files or create component barrel files.
-
-### Feature TypeScript barrels
-
-Feature logic uses explicit imports from `~/features`:
+**TypeScript imports** (explicit — components auto-import):
 
 ```ts
 import { isRouteGroup, type RouteGroup } from '~/features';
+import { getExampleArticle } from '~/features/templates/template.example';
 ```
 
-Barrel files: `app/features/index.ts`, each route-group `index.ts`, and `app/features/templates/index.ts`. Vue components are **not** exported from barrels.
-
-### Route groups
-
-Ten allowed question prefixes, each with a config in `app/features/{group}/`:
-
-`can` · `is` · `does` · `did` · `why` · `what` · `when` · `where` · `how` · `will`
-
-Routes: `/{routeGroup}/{slug}` via a single dynamic page at `app/pages/[routeGroup]/[slug].vue`. Validate with `isRouteGroup()`; invalid groups return 404.
-
-### Minimal page strategy
-
-Only two pages: `index.vue` (starter homepage) and `[routeGroup]/[slug].vue` (question articles). Add more pages only when a project’s real requirements justify them.
-
-### Replacing the starter example
-
-Example article data lives in `app/features/templates/template.example.ts`. The working demo is `/what/is-an-editorial-system`. Replace `getExampleArticle()` with your content source; other valid routes return 404 until content is added.
-
-### Single scroll-spy rule
-
-`TableOfContents` is the **only** scroll-spy in the system. Do not add `ArticleToc`, `MobileToc`, or `DesktopToc`. One instance adapts responsively (sticky sidebar on desktop, collapsible on mobile).
-
-### Project-specific decisions
-
-Each fork owns: content sources, CMS choice, domain types, section selection per article, disclaimers, evidence claims, and topic taxonomy emerging from real SERP analysis.
+Barrel files export logic and types only. Vue components are **not** exported from barrels.
 
 ---
 
-## 🧩 Roadmap
+## Conventions
 
-### Coming Soon
-- [ ] Authentication module (optional)
-- [ ] Dashboard layout examples
-- [ ] Dark mode toggle component
-- [ ] SEO meta module integration
-- [ ] i18n configuration example
-- [ ] Unit testing setup (Vitest)
-- [ ] E2E testing setup (Playwright)
+### Styling
 
-### Premium Version (Optional)
-- 🔐 Auth flow with session management
-- 📊 Dashboard with charts and analytics
-- 🎨 Extended UI components library
-- 🌙 Advanced dark mode with persistence
-- 📱 Mobile-optimized layouts
-- 🔌 CMS integration examples
+- **No `<style>` blocks** in Vue files
+- One CSS file per component, imported once in `components.css`
+- Import order: **primitives → blocks → templates**
+- Use semantic tokens from `tokens.css`; do not put visual tokens in `app.config.ts`
+- CSS entry chain: `main.css` → `tokens.css` → `base.css` → `components.css`
 
----
+### Adding a component
 
-## 🤝 Contributing
+1. Create `ComponentName.vue` in the correct layer folder
+2. Add matching CSS at `app/assets/css/components/{primitives|blocks|templates}/component-name.css`
+3. Import the CSS in `components.css` (respect layer order)
+4. Do not create component barrel files
 
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
+### Auto-imports
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Components resolve from `~/features/*/components/**/*.vue` (first) and `~/components/**` (second), with `pathPrefix: false`. Use `<Button />` and `<Hero />` directly — no manual imports.
 
----
+Composables auto-import from `app/composables/**`.
 
-## 📄 License
+### Pages
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+Only two pages by design:
 
-**Free to use, modify, and distribute.** If you use this commercially, a attribution or link back is appreciated but not required.
+| Page | Role |
+|------|------|
+| `app/pages/index.vue` | Homepage — blocks (+ optional `Hero`) |
+| `app/pages/[routeGroup]/[slug].vue` | Question articles — `QuestionPage` + template sections |
+
+Add more pages only when real requirements justify them.
 
 ---
 
-## 🙏 Acknowledgments
+## What to customize vs. what to keep stable
 
-- [Nuxt Team](https://nuxt.com) for the amazing framework
-- [TailwindCSS Team](https://tailwindcss.com) for the utility-first CSS
-- [TypeScript Team](https://www.typescriptlang.org) for type safety
+| Customize per project | Usually stable in the base |
+|-----------------------|----------------------------|
+| `app/features/` — data, configs, article wiring | Primitives (unless adding shared atoms) |
+| `app/pages/` — composition and SEO meta | Core primitive and block APIs |
+| Which template sections each article uses | `QuestionPage` shell structure |
+| Extensions to `template.types.ts` | Token and CSS architecture |
+| `app.config.ts` — site name and description | Auto-import and Nuxt config patterns |
+| Homepage block data in `index.vue` | Single-TOC scroll-spy rule |
 
----
-
-## 👨‍💻 Author
-
-**Maxime Bignolet**  
-Front-End Developer – La Rochelle, France
-
-[![GitHub](https://img.shields.io/badge/GitHub-MaximeBignolet-181717?logo=github)](https://github.com/MaximeBignolet)
-[![Portfolio](https://img.shields.io/badge/Portfolio-maximedev.fr-00DC82)](https://maximedev.fr)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Maxime_Bignolet-0A66C2?logo=linkedin)](https://www.linkedin.com/in/maxime-bignolet-8228bb219/)
+**Default approach:** extend **templates** and **features** first. Touch primitives and blocks only when the change is genuinely shared infrastructure.
 
 ---
 
-<p align="center">
-  <strong>⭐ If this template helped you, consider giving it a star!</strong>
-</p>
+## AI assistant context
 
-<p align="center">
-  <a href="https://nuxt-starter-template-seven.vercel.app/">🌐 View Live Demo</a>
-</p>
+Use this section when prompting an AI coding assistant on a fork of this repository.
+
+> You are working in a forkable **Nuxt 4 + TypeScript + Tailwind CSS 4** editorial starter. It is presentation-first: reusable UI layers (primitives → blocks → templates) with project-specific logic in `app/features/`. Each project forks independently and owns its content source, types, and section selection.
+
+**Task routing:**
+
+| Task | Where to work |
+|------|---------------|
+| Add a homepage section | Existing or new **block** → wire in `index.vue` |
+| Add an article section (e.g. Side Effects) | New **template** component → optional type in `template.types.ts` → use in `[slug].vue` |
+| Wire CMS / API / markdown | **`app/features/`** — data fetching, types, replace `template.example.ts` |
+| New button, input, or form control | **Primitive** + CSS |
+| Site header, footer, or nav | **Blocks** (`SiteHeader`, `SiteFooter`) |
+| SEO structured data | `template.seo.ts` and page-level `useHead` in `[slug].vue` |
+
+**Reference implementation:** demo route `/what/is-an-editorial-system` and `app/features/templates/template.example.ts`.
+
+**Hard rules:**
+
+- No `<style>` in Vue files; one external CSS file per component
+- `TableOfContents` is the only scroll-spy — do not add alternatives
+- Vue components auto-import; TypeScript logic imports from `~/features` barrels
+- Visual tokens in `tokens.css`, not `app.config.ts`
+
+When starting a new fork, add project-specific notes below this section: content source, domain, planned template sections, and any disclaimers or compliance requirements.
+
+---
+
+## Customization
+
+### Site metadata
+
+Edit `app/app.config.ts`:
+
+```ts
+export default defineAppConfig({
+  site: {
+    name: `Your Site Name`,
+    description: `Your site description.`,
+    defaultLocale: `en`,
+  },
+});
+```
+
+### Environment variables
+
+```bash
+# .env
+API_BASE_URL=https://api.example.com
+```
+
+Available via `useRuntimeConfig().public.apiBaseUrl`.
+
+### Tailwind theme extensions
+
+Add tokens in `app/assets/css/tokens.css` or extend via `@theme` in `main.css`.
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+Based on [nuxt-starter-template](https://github.com/MaximeBignolet/nuxt-starter-template) by Maxime Bignolet.
