@@ -288,3 +288,4 @@ Add tokens in `app/assets/css/tokens.css` or extend via `@theme` in `main.css`.
 MIT — see [LICENSE](LICENSE).
 
 Based on [nuxt-starter-template](https://github.com/MaximeBignolet/nuxt-starter-template) by Maxime Bignolet.
+
