@@ -1,120 +1,145 @@
 <script setup lang="ts">
-import type { CollectionsItem } from '~/components/blocks/Collections.vue';
-import type { PopularQuestionsItem } from '~/components/blocks/PopularQuestions.vue';
-import type { ReadingPathsItem } from '~/components/blocks/ReadingPaths.vue';
-import type { RecentlyUpdatedItem } from '~/components/blocks/RecentlyUpdated.vue';
+import { school, admissionQuestions } from '~/data/school';
+import { media, schoolFilm } from '~/data/media';
 
-const { site } = useAppConfig();
-
-useSeoMeta({
-	title: site.name,
-	description: site.description,
-	ogTitle: site.name,
-	ogDescription: site.description,
-});
-
-const popularQuestions: PopularQuestionsItem[] = [
-	{
-		id: `q1`,
-		title: `What is an editorial system?`,
-		description: `How question-led content, reusable templates, and route groups fit together.`,
-		to: `/what/is-an-editorial-system`,
-		meta: `What`,
-	},
-	{
-		id: `q2`,
-		title: `How to structure question pages`,
-		description: `A practical shell for search-led articles with TOC and supporting sections.`,
-		to: `/how/to-structure-question-pages`,
-		meta: `How`,
-	},
-	{
-		id: `q3`,
-		title: `Why use route groups for content`,
-		description: `Organizing articles around real search intent instead of arbitrary categories.`,
-		to: `/why/use-route-groups-for-content`,
-		meta: `Why`,
-	},
-];
-
-const collections: CollectionsItem[] = [
-	{
-		id: `c1`,
-		title: `Getting started`,
-		description: `Core concepts for building on this editorial base.`,
-		to: `/what/is-an-editorial-system`,
-		meta: `4 articles`,
-	},
-	{
-		id: `c2`,
-		title: `Page structure`,
-		description: `Templates, blocks, and the question page shell.`,
-		to: `/how/to-structure-question-pages`,
-		meta: `3 articles`,
-	},
-];
-
-const readingPaths: ReadingPathsItem[] = [
-	{
-		id: `p1`,
-		title: `Build your first question page`,
-		description: `Start with the example article, then adapt templates for your topic.`,
-		to: `/what/is-an-editorial-system`,
-	},
-	{
-		id: `p2`,
-		title: `Understand route groups`,
-		description: `Map content to can, is, does, why, what, and other search-led prefixes.`,
-		to: `/why/use-route-groups-for-content`,
-	},
-];
-
-const recentlyUpdated: RecentlyUpdatedItem[] = [
-	{
-		id: `r1`,
-		title: `What is an editorial system?`,
-		description: `Updated with TOC scroll-spy and supporting sections.`,
-		to: `/what/is-an-editorial-system`,
-		meta: `Jul 2026`,
-	},
-];
+useSchoolSeo(school.name, `Discover New Misali Cadet School in Dera Ghazi Khan. Meet Principal Sohail Majeed, explore school life and find guidance for admission enquiries.`);
+const config = useRuntimeConfig();
+const base = String(config.public.siteUrl || ``).replace(/\/$/, ``);
+useHead({ script: [{ type: `application/ld+json`, innerHTML: JSON.stringify({ '@context': `https://schema.org`, '@type': `School`, 'name': school.name, 'address': { '@type': `PostalAddress`, 'streetAddress': `Shah Sikandar Road`, 'addressLocality': school.city, 'addressRegion': `Punjab`, 'addressCountry': `PK` }, ...(base ? { url: base } : {}) }) }] });
+const quickLinks = [{ label: `Admissions`, to: `/admissions`, caption: `Start your enquiry` }, { label: `Academics`, to: `/academics`, caption: `Questions about learning` }, { label: `School Life`, to: `/school-life`, caption: `See our community` }, { label: `Contact`, to: `/contact`, caption: `Find the school` }];
+const themes = [{ title: `Learning`, text: `A foundation built through curiosity, attention and a willingness to ask questions.` }, { title: `Character`, text: `Responsibility and respect, in the classroom and in everyday life.` }, { title: `Participation`, text: `Space to take part, discover interests and share experiences with others.` }];
 </script>
 
 <template>
-	<Container>
-		<Hero
-			:title="site.name"
-			:description="site.description"
-			eyebrow="Editorial base"
-		>
-			<template #meta>
-				<span>Question-led content</span>
-				<span>Token-driven CSS</span>
-				<span>Accessible components</span>
-			</template>
-		</Hero>
-
-		<PopularQuestions
-			title="Popular questions"
-			description="Starter examples aligned with common search intent."
-			:items="popularQuestions"
-		/>
-
-		<Collections
-			title="Collections"
-			description="Curated groups to explore related topics."
-			:items="collections"
-		/>
-
-		<ReadingPaths
-			title="Reading paths"
-			description="Suggested sequences for new contributors."
-			:items="readingPaths"
-		/>
-
-		<RecentlyUpdated
-			title="Recently updated"
-			:items="recentlyUpdated"
-		/>
-	</Container>
+	<div>
+		<Container>
+			<section
+				class="home-hero"
+				aria-labelledby="hero-title"
+			>
+				<div class="home-hero__copy">
+					<p class="eyebrow">
+						<span class="eyebrow-rule" /> Led by Principal Sohail Majeed
+					</p><p class="hero-school-name">
+						New Misali Cadet School
+					</p><h1 id="hero-title">
+						A strong foundation for learning <em>& character.</em>
+					</h1><p class="hero-description">
+						A school. A community. A place to grow. Discover New Misali through its people, its everyday life and the leadership of Principal Sohail Majeed.
+					</p><div class="hero-actions">
+						<Button to="/admissions">
+							Explore Admissions <span aria-hidden="true">↗</span>
+						</Button><NuxtLink
+							to="/principal"
+							class="text-link"
+						>Meet the Principal <span aria-hidden="true">↗</span></NuxtLink>
+					</div><p class="hero-location">
+						Shah Sikandar Road · Dera Ghazi Khan
+					</p>
+				</div>
+				<div class="home-hero__portrait">
+					<PrincipalPortrait priority /><p class="portrait-note">
+						The people behind the school. The purpose ahead of us.
+					</p>
+				</div>
+			</section>
+			<nav
+				class="parent-routes"
+				aria-label="Quick routes for parents"
+			>
+				<NuxtLink
+					v-for="(link, index) in quickLinks"
+					:key="link.to"
+					:to="link.to"
+				><span class="route-number">0{{ index + 1 }}</span><span><strong>{{ link.label }}</strong><span>{{ link.caption }}</span></span><span aria-hidden="true">↗</span></NuxtLink>
+			</nav>
+			<section class="leadership-intro section-space">
+				<p class="eyebrow">
+					01 / People & purpose
+				</p><div class="editorial-split">
+					<h2>Every school begins with <em>its people.</em></h2><div class="reading-copy">
+						<p class="lead">
+							Meet Sohail Majeed, Principal of New Misali Cadet School.
+						</p><p>Behind the name of an institution are the people who give it direction. Get to know the principal and explore the school he leads in Dera Ghazi Khan.</p><NuxtLink
+							to="/principal"
+							class="text-link"
+						>Meet our Principal <span aria-hidden="true">↗</span></NuxtLink>
+					</div>
+				</div>
+			</section>
+		</Container>
+		<section class="values-section">
+			<Container>
+				<div class="section-top">
+					<p class="eyebrow">
+						02 / A shared direction
+					</p><span class="quiet-label">Learning · Character · Community</span>
+				</div><h2>More than a school day. <em>A foundation for life.</em></h2><div class="values-list">
+					<div
+						v-for="(theme, index) in themes"
+						:key="theme.title"
+					>
+						<span class="route-number">0{{ index + 1 }}</span><h3>{{ theme.title }}</h3><p>{{ theme.text }}</p>
+					</div>
+				</div>
+			</Container>
+		</section>
+		<Container>
+			<section class="section-space school-life-home">
+				<div class="section-top">
+					<div>
+						<p class="eyebrow">
+							03 / Life at New Misali
+						</p><h2>A school, <em>in real moments.</em></h2>
+					</div><NuxtLink
+						to="/gallery"
+						class="text-link"
+					>Explore the gallery ↗</NuxtLink>
+				</div><div class="life-composition">
+					<Figure caption="Together in the school courtyard.">
+						<ZoomImage :item="media[2]!" />
+					</Figure><div>
+						<VideoPlayer :item="schoolFilm" /><p class="life-caption">
+							Assemblies, outdoor activities and moments of participation. Explore the supplied photographs and films for a closer look at school life.
+						</p><NuxtLink
+							to="/school-life"
+							class="text-link"
+						>Discover School Life ↗</NuxtLink>
+					</div>
+				</div>
+			</section>
+			<section class="academics-home section-space">
+				<p class="eyebrow">
+					04 / For parents
+				</p><div class="editorial-split">
+					<h2>The right questions. <em>A clearer choice.</em></h2><div class="reading-copy">
+						<p class="lead">
+							Choosing a school starts with understanding your child's next step.
+						</p><p>Ask about class availability, subjects, learning expectations and how the school communicates with parents. Current academic details should be confirmed directly with the school.</p><NuxtLink
+							to="/academics"
+							class="text-link"
+						>Explore academic guidance ↗</NuxtLink>
+					</div>
+				</div>
+			</section>
+			<section class="enquiry-home section-space">
+				<div class="section-top">
+					<div>
+						<p class="eyebrow">
+							05 / Admission enquiries
+						</p><h2>Start with <em>what matters.</em></h2>
+					</div><p class="reading-copy">
+						A useful first conversation covers four things. Our admissions guide helps you prepare.
+					</p>
+				</div><div class="question-list">
+					<NuxtLink
+						v-for="(item, index) in admissionQuestions"
+						:key="item.title"
+						to="/admissions"
+					><span class="route-number">0{{ index + 1 }}</span><h3>{{ item.title }}</h3><span aria-hidden="true">↗</span></NuxtLink>
+				</div>
+			</section>
+		</Container>
+		<AdmissionCallout />
+	</div>
 </template>

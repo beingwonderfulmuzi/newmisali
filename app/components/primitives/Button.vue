@@ -7,6 +7,7 @@ const props = withDefaults(defineProps<{
 	size?: ButtonSize;
 	disabled?: boolean;
 	loading?: boolean;
+	to?: string;
 }>(), {
 	type: `button`,
 	variant: `primary`,
@@ -19,7 +20,16 @@ const isDisabled = computed(() => props.disabled || props.loading);
 </script>
 
 <template>
+	<NuxtLink
+		v-if="to"
+		:to="to"
+		class="btn"
+		:class="[variant !== 'primary' && `btn--${variant}`, size !== 'md' && `btn--${size}`]"
+	>
+		<slot />
+	</NuxtLink>
 	<button
+		v-else
 		:type="type"
 		class="btn"
 		:class="[

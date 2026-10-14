@@ -32,7 +32,7 @@ useSeoMeta({
 useHead({
 	script: [
 		{
-			type: `application/ld+json`,
+			type: `application/ld+json` as const,
 			innerHTML: JSON.stringify(buildArticleStructuredData({
 				title: article.title,
 				description: article.description,
@@ -43,7 +43,7 @@ useHead({
 		},
 		...(article.breadcrumbs?.length
 			? [{
-					type: `application/ld+json`,
+					type: `application/ld+json` as const,
 					innerHTML: JSON.stringify(buildBreadcrumbStructuredData({
 						items: article.breadcrumbs,
 						baseUrl: requestUrl.origin,
@@ -52,7 +52,7 @@ useHead({
 			: []),
 		...(article.faqs?.length
 			? [{
-					type: `application/ld+json`,
+					type: `application/ld+json` as const,
 					innerHTML: JSON.stringify(buildFAQStructuredData({ faqs: article.faqs })),
 				}]
 			: []),

@@ -4,10 +4,11 @@
 	align-items: center;
 	justify-content: center;
 	gap: 0.5rem;
+	min-height: var(--height-control);
 	padding: 0.625rem 1rem;
 	border: 1px solid transparent;
 	border-radius: var(--radius-md);
-	background: var(--color-brand);
+	background: var(--color-action);
 	color: #fff;
 	font-size: 0.9375rem;
 	font-weight: 500;
@@ -17,7 +18,8 @@
 	transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
 }
 .btn:hover:not(:disabled) {
-	background: var(--color-brand-hover);
+	background: var(--color-action-hover);
+	color: var(--color-on-brand);
 }
 .btn:disabled,
 .btn[aria-disabled="true"] {
@@ -31,6 +33,7 @@
 }
 .btn--secondary:hover:not(:disabled) {
 	background: var(--color-surface-muted);
+	color: var(--color-text-primary);
 }
 .btn--tonal {
 	background: rgb(30 77 58 / 0.1);
@@ -39,6 +42,7 @@
 }
 .btn--tonal:hover:not(:disabled) {
 	background: rgb(30 77 58 / 0.16);
+	color: var(--color-brand);
 }
 .btn--outlined {
 	background: var(--color-surface);
@@ -48,6 +52,7 @@
 .btn--outlined:hover:not(:disabled) {
 	background: rgb(30 77 58 / 0.06);
 	border-color: var(--color-brand);
+	color: var(--color-brand);
 }
 .btn--ghost {
 	background: transparent;
@@ -56,6 +61,7 @@
 }
 .btn--ghost:hover:not(:disabled) {
 	background: var(--color-surface-muted);
+	color: var(--color-brand);
 }
 .btn--text {
 	padding-inline: 0.25rem;

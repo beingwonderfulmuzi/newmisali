@@ -1,23 +1,25 @@
 <script setup lang="ts">
-import type { NavLink } from '~/components/blocks/SiteHeader.vue';
-
-const navLinks: NavLink[] = [
-	{ label: `Home`, to: `/` },
-	{ label: `Components`, to: `/components` },
-	{ label: `Example article`, to: `/what/is-an-editorial-system` },
-];
+import { navigation, school } from '~/data/school';
 </script>
 
 <template>
 	<div class="site-shell">
 		<SkipLink />
-		<SiteHeader :nav-links="navLinks" />
+		<SiteHeader
+			:site-name="school.name"
+			:nav-links="navigation"
+		/>
 		<main
 			id="main-content"
 			class="site-main"
+			tabindex="-1"
 		>
 			<slot />
 		</main>
-		<SiteFooter :nav-links="navLinks" />
+		<SiteFooter
+			:site-name="school.name"
+			:description="school.address"
+			:nav-links="[...navigation, { label: 'Principal', to: '/principal' }, { label: 'Admissions', to: '/admissions' }, { label: 'Privacy', to: '/privacy' }]"
+		/>
 	</div>
 </template>

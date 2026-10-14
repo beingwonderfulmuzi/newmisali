@@ -1,4 +1,4 @@
-import type { RouteGroup } from './route-group.types';
+import type { RouteGroup } from '../route-group.types';
 
 export interface ArticleAuthor {
 	name: string;

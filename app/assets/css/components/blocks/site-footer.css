@@ -1,42 +1,11 @@
-
-.site-footer {
-	margin-top: auto;
-	padding-block: 2.5rem;
-	border-top: 1px solid var(--color-border);
-	background: var(--color-surface-muted);
-}
-.site-footer__inner {
-	display: flex;
-	flex-direction: column;
-	gap: 1.5rem;
-}
-.site-footer__brand {
-	margin: 0;
-	font-family: var(--font-editorial);
-	font-size: 1rem;
-}
-.site-footer__desc {
-	margin: 0.25rem 0 0;
-	color: var(--color-text-muted);
-	font-size: var(--text-meta);
-}
-.site-footer__nav { margin: 0; }
-.site-footer__list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.75rem 1.25rem;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.site-footer__link {
-	color: var(--color-text-secondary);
-	font-size: var(--text-meta);
-	text-decoration: none;
-}
-.site-footer__link:hover { color: var(--color-brand); }
-.site-footer__copy {
-	margin: 0;
-	color: var(--color-text-muted);
-	font-size: var(--text-meta);
-}
+.site-footer { margin-top: auto; padding-block: 4rem 1.5rem; color: var(--color-on-brand); background: var(--color-brand-surface); }
+.site-footer__inner { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--spacing-grid); padding-bottom: 3rem; }
+.site-footer__brand { max-width: 24rem; margin: 0 0 1rem; font-family: var(--font-editorial); font-size: 2.5rem; line-height: 1.15; }
+.site-footer__desc { max-width: 25rem; color: var(--color-on-brand); opacity: 0.8; font-size: 0.875rem; }
+.site-footer__list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; padding: 0; margin: 0; list-style: none; }
+.site-footer .eyebrow { color: var(--color-on-brand); opacity: 0.7; }
+.site-footer__link, .site-footer__link:hover { color: var(--color-on-brand); font-size: 0.875rem; text-decoration: none; }
+.site-footer__link:hover { text-decoration: underline; }
+.site-footer__bottom { display: flex; justify-content: space-between; gap: 1rem; padding-top: 1.5rem; border-top: 1px solid rgb(247 244 236 / 0.2); font-size: 0.75rem; }
+.site-footer__bottom p { margin: 0; opacity: 0.75; }
+@media (max-width: 40rem) { .site-footer__inner { grid-template-columns: 1fr; } .site-footer__bottom { flex-direction: column; } }

@@ -2,6 +2,10 @@
 import type { NuxtError } from '#app';
 
 const props = defineProps<{ error: NuxtError }>();
+const { theme } = useSchoolTheme();
+useHead(() => ({ htmlAttrs: { 'data-theme': theme.value } }));
+
+useSeoMeta({ title: `Page unavailable | New Misali Cadet School`, robots: `noindex, nofollow` });
 
 const title = computed(() => {
 	if (props.error.statusCode === 404) {

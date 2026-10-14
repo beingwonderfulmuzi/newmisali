@@ -24,3 +24,11 @@ logs
 !.env.example
 
 .npmrc
+# Local visual audit and browser reports
+.audit/
+
+# Unpublished source videos; retained locally, omitted from Pages and Git uploads.
+/public/videos/Annual-ceremony.mp4
+/public/videos/Annual-prize-distribution.mp4
+/public/videos/AQPHIq-GaJHjfZtVxPgt6hybnSR_IScjht6UjQgRrTUike4tNvOYgaWGBQbb0kh6rFFE1qadYb_HC4pDzw9BgN_-.mp4
+/public/videos/Students-playing.mp4

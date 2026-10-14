@@ -1,8 +1,3 @@
 export default defineAppConfig({
-	site: {
-		name: `Editorial Base`,
-		shortName: `Editorial`,
-		description: `A minimalist, token-driven editorial system base for question-led content.`,
-		defaultLocale: `en`,
-	},
+	site: { name: `New Misali Cadet School`, shortName: `New Misali`, description: `Meet Principal Sohail Majeed and discover New Misali Cadet School on Shah Sikandar Road, Dera Ghazi Khan, Punjab, Pakistan.`, defaultLocale: `en` },
 });
