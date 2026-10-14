@@ -45,6 +45,8 @@ Cloudflare Pages deployment is configured in nuxt.config.ts using `cloudflare_pa
 
 All school content photographs, including both principal portraits, now share ImageLightbox through ZoomImage and the root image-viewer provider. Clicking opens the complete image in a native dialog; optional 2× zoom uses a scrollable image stage. Close, Escape and backdrop clicks restore the page and keyboard focus. Gallery next/previous navigation retains the currently filtered photograph collection. Video posters continue to play videos; the school logo remains a home link.
 
+Follow-up browser checks covered all nine inline content photos on five routes at 360, 390, 768, 1024 and 1440 pixels. Opening, zooming, fitting, closing, focus restoration and unchanged page scroll all passed, as did filtered gallery navigation. No overflow or browser errors occurred. Theme switching, persistence after reload and server-rendered dark appearance were also checked. The complete principal frame and caption end at about 418px on a 360×640 screen, keeping the principal above the fold. The original source still lacks the top of his head.
+
 ## Verification
 
 - ESLint passed across the repository.
