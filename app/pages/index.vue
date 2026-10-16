@@ -38,17 +38,7 @@ const themes = [{ title: `Learning`, text: `A foundation built through curiosity
 					</p>
 				</div>
 				<figure class="home-hero__film">
-					<video
-						class="home-hero__video"
-						src="/videos/newmisali-flagship-web.mp4#t=0.1"
-						controls
-						playsinline
-						preload="metadata"
-						aria-label="New Misali Cadet School flagship film"
-					>
-						Your browser does not support video playback.
-						<a href="/videos/newmisali-flagship-web.mp4">Download the flagship film</a>.
-					</video>
+					<FlagshipFilm />
 					<figcaption>
 						<strong>Our school. Our vision.</strong>
 						<span>Watch the New Misali flagship film</span>
