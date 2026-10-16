@@ -43,6 +43,7 @@ export default defineNuxtConfig({
 		},
 		// Preserve originals, but omit unused oversized/invalid media from deployments.
 		ignore: [
+			`**/videos/newmisali_flagship_AI.mp4`,
 			`**/videos/Annual-ceremony.mp4`,
 			`**/videos/Annual-prize-distribution.mp4`,
 			`**/videos/AQPHIq-GaJHjfZtVxPgt6hybnSR_IScjht6UjQgRrTUike4tNvOYgaWGBQbb0kh6rFFE1qadYb_HC4pDzw9BgN_-.mp4`,
