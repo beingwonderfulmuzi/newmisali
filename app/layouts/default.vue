@@ -16,6 +16,7 @@ import { navigation, school } from '~/data/school';
 		>
 			<slot />
 		</main>
+		<WhatsAppLink floating />
 		<SiteFooter
 			:site-name="school.name"
 			:description="school.address"

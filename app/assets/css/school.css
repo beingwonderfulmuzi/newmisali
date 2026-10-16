@@ -8,10 +8,16 @@ h1 em, h2 em { font-weight: inherit; color: var(--color-brand); }
 .lead { font-size: clamp(1.15rem, 1.7vw, 1.4rem); color: var(--color-text-primary); line-height: 1.55; }
 .text-link { display: inline-flex; align-items: center; gap: 1.5rem; min-height: var(--height-control); color: var(--color-brand); font-size: 0.875rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--color-border-strong); }
 .text-link:hover { border-color: var(--color-brand); }
-.home-hero { display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--spacing-grid); align-items: center; padding-block: clamp(1.25rem, 2vw, 2rem) 2rem; }
+.home-hero { display: grid; grid-template-columns: 0.85fr 1.3fr; gap: var(--spacing-grid); align-items: center; padding-block: clamp(1.25rem, 2vw, 2rem) 2rem; }
 .home-hero__copy { min-width: 0; }
+.home-hero__film { min-width: 0; margin: 0; overflow: hidden; background: var(--color-brand-surface); color: var(--color-on-brand); }
+.home-hero__video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #111; }
+.home-hero__film figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 1rem; padding: 1rem 1.25rem; }
+.home-hero__film figcaption strong { font-family: var(--font-editorial); font-size: 1.25rem; font-weight: 400; }
+.home-hero__film figcaption span { font-size: 0.7rem; }
+
 .hero-school-name { font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-brand); }
-.home-hero h1 { margin-bottom: 1.75rem; font-size: clamp(3.1rem, 5.75vw, 5.4rem); line-height: 1.04; }
+.home-hero h1 { margin-bottom: 1.75rem; font-size: clamp(2.8rem, 4.6vw, 4.5rem); line-height: 1.04; }
 .hero-description { max-width: none; font-size: 0.95rem; color: var(--color-text-secondary); }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 1.8rem; }
 .hero-actions .btn { min-height: 3.4rem; padding-inline: 1.4rem; gap: 1.5rem; }
@@ -150,6 +156,8 @@ body:has(dialog[open]) { overflow: hidden; }
  .home-hero__copy { display: contents; }
  .home-hero .eyebrow { order: 0; margin: 0; font-size: 0.62rem; }
  .home-hero .hero-school-name { order: 1; margin: 0; font-size: 0.8rem; }
+ .home-hero__film { order: 2; width: 100%; }
+ .home-hero__film figcaption { padding: 0.75rem 1rem; }
  .home-hero__portrait { order: 2; max-width: 34rem; padding: 0; width: 100%; }
  .home-hero .principal-portrait__top { display: none; }
  .home-hero .principal-portrait figcaption { padding: 0.8rem 1rem; }

@@ -11,7 +11,7 @@ import { school } from '~/data/school';
 				</p><h2>Begin with a<br>conversation.</h2><p>Explore the school. Ask the questions that matter to your family.</p>
 			</div>
 			<div>
-				<Button to="/admissions">
+				<WhatsAppLink>Discuss admissions on WhatsApp</WhatsAppLink><Button to="/admissions">
 					Admission Enquiries <span aria-hidden="true">↗</span>
 				</Button><p class="callout-address">
 					{{ school.address }}

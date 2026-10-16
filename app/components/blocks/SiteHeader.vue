@@ -103,6 +103,7 @@ watch(() => route.path, () => {
 			</nav>
 			<div class="site-header__actions">
 				<ThemeSwitcher />
+				<WhatsAppLink class="header-whatsapp" />
 				<Button
 					class="header-cta"
 					to="/admissions"
@@ -165,9 +166,14 @@ watch(() => route.path, () => {
 					</li>
 				</ul>
 			</nav>
+			<WhatsAppLink />
 			<Button to="/admissions">
 				Admission Enquiries ↗
 			</Button>
 		</dialog>
 	</header>
 </template>
+
+<style scoped>
+@media (max-width: 74rem) { .header-whatsapp { display: none; } }
+</style>

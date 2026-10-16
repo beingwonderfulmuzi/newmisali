@@ -16,7 +16,10 @@ useSchoolSeo(`Admission Enquiries`, `Prepare an admission enquiry for New Misali
 					Before you apply
 				</p><div class="editorial-split">
 					<h2>Four questions.<br><em>One informed decision.</em></h2><p class="reading-copy">
-						Current intake dates, class availability and fees should be confirmed directly with the school. This page guides your enquiry; it does not submit an application or reserve a place.
+						View our <NuxtLink
+							to="/fees"
+							class="text-link"
+						>monthly fees</NuxtLink> for boarding students and day scholars. Confirm current intake dates and class availability directly with the school. This page guides your enquiry; it does not submit an application or reserve a place.
 					</p>
 				</div><div class="numbered-topics">
 					<article
@@ -35,7 +38,7 @@ useSchoolSeo(`Admission Enquiries`, `Prepare an admission enquiry for New Misali
 				</div><div>
 					<p class="lead">
 						{{ school.name }}
-					</p><p>{{ school.address }}</p><p>Visit the school to enquire about current arrangements. Please confirm a suitable meeting time with the school team.</p><Button to="/contact">
+					</p><p>{{ school.address }}</p><p>Visit the school to enquire about current arrangements. Please confirm a suitable meeting time with the school team.</p><WhatsAppLink>Ask about admissions</WhatsAppLink><Button to="/contact">
 						Location & enquiry guidance ↗
 					</Button>
 				</div>

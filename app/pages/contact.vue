@@ -26,7 +26,7 @@ useSchoolSeo(`Contact & Location`, `Find New Misali Cadet School on Shah Sikanda
 				</div><div class="contact-copy">
 					<p class="eyebrow">
 						Your enquiry
-					</p><h2>A thoughtful<br><em>first conversation.</em></h2><p>For current classes, fees, admission requirements or a visit, please enquire in person at the school.</p><p>An official telephone number and email address have not yet been published on this website. There is no online enquiry form.</p><EditorialSection
+					</p><h2>A thoughtful<br><em>first conversation.</em></h2><p>For current classes, fees, admission requirements or a visit, message our school team on WhatsApp.</p><p>WhatsApp: {{ school.whatsappDisplay }}</p><WhatsAppLink>Chat with our school team</WhatsAppLink><EditorialSection
 						variant="practical-tips"
 						title="Before travelling"
 					>

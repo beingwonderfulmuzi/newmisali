@@ -19,13 +19,13 @@ const themes = [{ title: `Learning`, text: `A foundation built through curiosity
 			>
 				<div class="home-hero__copy">
 					<p class="eyebrow">
-						<span class="eyebrow-rule" /> Led by Principal Sohail Majeed
+						<span class="eyebrow-rule" /> Discover New Misali
 					</p><p class="hero-school-name">
 						New Misali Cadet School
 					</p><h1 id="hero-title">
-						A strong foundation for learning <em>& character.</em>
+						Learning today. <em>Leading tomorrow.</em>
 					</h1><p class="hero-description">
-						A school. A community. A place to grow. Discover New Misali through its people, its everyday life and the leadership of Principal Sohail Majeed.
+						Get to know New Misali Cadet School through our flagship film. Discover a community shaped by learning, character and the confidence to take part.
 					</p><div class="hero-actions">
 						<Button to="/admissions">
 							Explore Admissions <span aria-hidden="true">↗</span>
@@ -37,11 +37,23 @@ const themes = [{ title: `Learning`, text: `A foundation built through curiosity
 						Shah Sikandar Road · Dera Ghazi Khan
 					</p>
 				</div>
-				<div class="home-hero__portrait">
-					<PrincipalPortrait priority /><p class="portrait-note">
-						The people behind the school. The purpose ahead of us.
-					</p>
-				</div>
+				<figure class="home-hero__film">
+					<video
+						class="home-hero__video"
+						src="/videos/newmisali_flagship_AI.mp4#t=0.1"
+						controls
+						playsinline
+						preload="metadata"
+						aria-label="New Misali Cadet School flagship film"
+					>
+						Your browser does not support video playback.
+						<a href="/videos/newmisali_flagship_AI.mp4">Download the flagship film</a>.
+					</video>
+					<figcaption>
+						<strong>Our school. Our vision.</strong>
+						<span>Watch the New Misali flagship film</span>
+					</figcaption>
+				</figure>
 			</section>
 			<nav
 				class="parent-routes"
@@ -100,7 +112,7 @@ const themes = [{ title: `Learning`, text: `A foundation built through curiosity
 						<ZoomImage :item="media[2]!" />
 					</Figure><div>
 						<VideoPlayer :item="schoolFilm" /><p class="life-caption">
-							Assemblies, outdoor activities and moments of participation. Explore the supplied photographs and films for a closer look at school life.
+							Assemblies, outdoor activities and moments of participation. Take a closer look at school life through photographs and films from our community.
 						</p><NuxtLink
 							to="/school-life"
 							class="text-link"
